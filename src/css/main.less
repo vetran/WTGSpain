@@ -1,3 +1,5 @@
+@import "sprite";
+
 @mainColor: #618bc5;
 
 
@@ -16,7 +18,8 @@ a{
 
 body{
   font-family: "Open Sans", sans-serif;
-  //background-color: #f8f8f8;
+  overflow-x: hidden;
+  overflow-y: auto;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.7;
@@ -26,7 +29,6 @@ body{
   word-wrap: break-word;
 }
 
-//    list-style-type: none;
 
 .header{
   &__top{
@@ -37,6 +39,10 @@ body{
       text-align: right;
     }
   }
+}
+
+.wrapper{
+  position: relative;
 }
 
 .contact{
@@ -87,6 +93,14 @@ body{
   position: relative;
   padding: 1px 24px 2px 38px;
   border: 1px solid @mainColor;
+  &:hover{
+    .language__list{
+      opacity: 1;
+      right: -1px;
+      left: -1px;
+      top: 100%;
+    }
+  }
   &:after {
     position: absolute;
     top: 1px;
@@ -98,8 +112,39 @@ body{
     content: "\F107";
     transition: all .2s;
   }
+  &__link{
+    font-size: 13px;
+    position: relative;
+    color: #000;
+    display: block;
+    padding: 5px 0;
+    padding-left: 38px;
+  }
+  &__icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 3px;
+    margin: auto;
+    width: 24px;
+    height: 24px;
+    margin-left: 3px;
+  }
+  &__item{
+    &:hover{
+      background: #f3f3f3;
+    }
+  }
   &__list{
-    display: none;
+    position: absolute;
+    opacity: 0;
+    border: 1px solid #ddd;
+    border-top: none;
+    z-index: 2;
+    background: #fff;
+    right: 999em;
+    transition: opacity .3s;
+    margin-top: 1px;
   }
   &__current{
     &-icon{
@@ -111,7 +156,6 @@ body{
       width: 24px;
       height: 24px;
       margin-left: 3px;
-      background: #ddd;
     }
     &-name{
       display: inline-block;
@@ -192,12 +236,21 @@ body{
   }
 
   &__item{
+    z-index: 2;
     position: relative;
+    &:hover{
+      background: #f3f3f3;
+    }
   }
   &__link{
     font-size: 13px;
     color: #000;
     display: block;
+    &:after {
+      content: '';
+      display: table;
+      width: 100%;
+    }
     &--to-all{
       padding: 0 5px;
       text-align: center;
@@ -205,6 +258,26 @@ body{
       border-top: 1px solid #ddd;
     }
   }
+  &__image {
+    display: block;
+    float: left;
+    width: 70px;
+    margin: 2px;
+    margin-right: 5px;
+    background: #ddd;
+    height: 50px;
+  }
+  &__name {
+    display: block;
+    padding-right: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: bold;
+    text-overflow: ellipsis;
+  }
+
+
+
   &__close{
     cursor: pointer;
     position: absolute;
@@ -267,6 +340,15 @@ body{
         }
       }
     }
+    &:hover{
+      &>.nav__sub-list{
+        z-index: 2;
+        opacity: 1;
+        top: 100%;
+        left: 0;
+        background: #fff;
+      }
+    }
   }
   &__link {
     line-height: 70px;
@@ -280,7 +362,70 @@ body{
       color: inherit;
     }
   }
+
+  &__sub{
+    &--has-children{
+      padding-right: 40px;
+    }
+    &-list{
+      top: -999em;
+      opacity: 0;
+      transition: opacity .3s;
+      position: absolute;
+    }
+    &-item{
+      position: relative;
+      &:hover{
+        &>.nav__sub-list{
+          z-index: 2;
+          opacity: 1;
+          top: 0;
+          left: 100%;
+          background: #fff;
+        }
+      }
+      &--has-children{
+        &>.nav__sub-link{
+          padding-right: 30px;
+          &:after {
+            position: absolute;
+            top: 0;
+            right: 6px;
+            font-family: 'FontAwesome';
+            line-height: 50px;
+            content: "\F105";
+            color: #666;
+            transition: all .2s;
+          }
+        }
+      }
+      
+    }
+    &-link{
+      white-space: nowrap;
+      font-weight: bold;
+      color: #000;
+      font-size: 0.9em;
+      display: block;
+      padding: 0 30px;
+      line-height: 50px;
+      &:hover{
+        color: inherit;
+        background: #f3f3f3;
+      }
+    }
+  }
 }
+
+.slick{
+  &__item{
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
 
 .main-text{
   text-align: center;
@@ -289,5 +434,72 @@ body{
   }
   p{
     text-align: justify;
+  }
+}
+
+
+
+.item{
+  margin-bottom: 30px;
+  &:hover{
+    box-shadow: 0 7px 9px 1px rgba(0,0,0,.24);
+  }
+
+  transition: box-shadow .3s ease-in-out;
+
+  &__image{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  &__name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 3px 5px 7px;
+    right: 0;
+    background-color: rgba(255,255,255,.8);
+  }
+  &__photo {
+    position:  relative;
+  }
+  &__location {
+    position:  absolute;
+    top: 5px;
+    right: 5px;
+    font-size:  11px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  &__title{
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    line-height: 18px;
+    margin-bottom: 4px;
+    font-size: 1em!important;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    font-family: "Helvetica Neue","Segoe UI",Oxygen,Ubuntu,Cantarell,"Open Sans",sans-serif;
+  }
+  &__sub-title{
+    text-align: center;
+    display: block;
+    font-size: 11px;
+    font-weight: 300;
+    &-type{
+
+    }
+    &-divider{
+      width: 3px;
+      height: 3px;
+      display: inline-block;
+      background: #d40000;
+      margin: 0 4px;
+      vertical-align: middle;
+    }
+    &-status{
+
+    }
   }
 }

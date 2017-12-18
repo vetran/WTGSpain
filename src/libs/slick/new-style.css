@@ -1,0 +1,43 @@
+.slick-next {
+    font-size: 0;
+    background: #263b55;
+    border: 1px solid #ddd;
+    height: 100px;
+    width: 40px;
+    /*border-right-color: transparent;*/
+    /*border-radius: 7px 0 0 7px;*/
+    border-radius: 7px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    right: -5px;
+    z-index: 10;
+}
+.slick-next.slick-disabled {
+    background: rgba(38, 59, 85, 0.5);
+}
+
+.slick-prev {
+    font-size: 0;
+    background: #263b55;
+    border: 1px solid #ddd;
+    height: 100px;
+    width: 40px;
+    /*border-left-color: transparent;*/
+    /*border-radius: 0 7px 7px 0;*/
+    border-radius: 7px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    left: -5px;
+    z-index: 10;
+}
+.slick-prev.slick-disabled {
+    background: rgba(38, 59, 85, 0.5);
+}
+
+
