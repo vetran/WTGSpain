@@ -436,6 +436,7 @@ body {
 
 .load-more {
   &__button {
+    cursor: pointer;
     display: block;
     line-height: 30px;
     max-width: 290px;
@@ -463,12 +464,6 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px){
-
-}
-
-
-
 .item {
   padding-bottom: 5px;
   background: #fff;
@@ -479,16 +474,16 @@ body {
   &:hover {
     box-shadow: 0 7px 9px 1px rgba(0, 0, 0, .24);
   }
-  &:after{
+  &:after {
     content: '';
     display: inline-block;
     width: 100%;
     height: 0;
   }
-  &__link{
+  &__link {
     display: block;
     color: #000;
-    &:hover{
+    &:hover {
       color: #000;
     }
   }
@@ -563,10 +558,10 @@ body {
     }
   }
 
-  &__id{
+  &__id {
     vertical-align: middle;
     display: inline-block;
-    &-icon{
+    &-icon {
       text-transform: uppercase;
       vertical-align: middle;
       display: inline-block;
@@ -577,42 +572,43 @@ body {
       padding: 0 3px 0 0;
       color: #504f4f;
     }
-    &-value{
+    &-value {
       display: inline-block;
       vertical-align: middle;
       font-size: 12.8px;
     }
   }
 
-  &__favorites{
+  &__favorites {
+    cursor: pointer;
     font-size: 22px;
     padding-right: 9px;
     padding-left: 5px;
     display: inline-block;
     vertical-align: middle;
     color: @mainColor;
-    transition: all .6s cubic-bezier(.165,.84,.44,1);
-    @media (max-width: 430px){
+    transition: all .6s cubic-bezier(.165, .84, .44, 1);
+    @media (max-width: 430px) {
       float: left;
       padding-left: 15px;
     }
-    @media (min-width: 768px) and (max-width: 991px){
+    @media (min-width: 768px) and (max-width: 991px) {
       float: left;
       padding-left: 15px;
     }
   }
-  &__property{
+  &__property {
     width: 50%;
     vertical-align: middle;
     display: inline-block;
-    @media (max-width: 430px){
+    @media (max-width: 430px) {
       width: 100%;
     }
-    @media (min-width: 768px) and (max-width: 991px){
+    @media (min-width: 768px) and (max-width: 991px) {
       width: 100%;
     }
   }
-  &__price{
+  &__price {
     vertical-align: middle;
     display: inline-block;
     line-height: 40px;
@@ -622,14 +618,14 @@ body {
     font-weight: 700;
     font-size: 15px;
     -webkit-font-smoothing: antialiased;
-    font-family: "Helvetica Neue","Segoe UI",Oxygen,Ubuntu,Cantarell,"Open Sans",sans-serif;
+    font-family: "Helvetica Neue", "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif;
   }
 }
 
-.property{
-  &__list{
+.property {
+  &__list {
     padding-left: 15px;
-    &:after{
+    &:after {
       content: '';
       display: table;
       width: 100%;
@@ -637,38 +633,37 @@ body {
       height: 0;
     }
   }
-  &__item{
+  &__item {
     float: left;
     width: 50%;
   }
-  &__icon{
+  &__icon {
     width: 16px;
     height: 16px;
     display: inline-block;
     vertical-align: middle;
   }
-  &__value{
+  &__value {
     color: #878787;
     margin-left: 4px;
     display: inline-block;
     vertical-align: middle;
     font-size: 10px;
     line-height: 20px;
-    font-family: Verdana,"Open Sans",sans-serif;
+    font-family: Verdana, "Open Sans", sans-serif;
     text-overflow: ellipsis;
     white-space: nowrap;
-    @media (max-width: 430px){
+    @media (max-width: 430px) {
       line-height: 26px;
       font-size: 14px;
     }
-    @media (min-width: 768px) and (max-width: 991px){
+    @media (min-width: 768px) and (max-width: 991px) {
       line-height: 26px;
       font-size: 14px;
     }
 
   }
 }
-
 
 .pagination {
   margin: 20px 0;
@@ -677,10 +672,10 @@ body {
   border-top: 1px solid @mainColor;
   &__item {
     vertical-align: middle;
-    display:  inline-block;
+    display: inline-block;
     font-size: 13px;
   }
-  &__link{
+  &__link {
     color: #000;
     display: block;
     cursor: pointer;
@@ -690,34 +685,113 @@ body {
     text-align: center;
     background-color: #fff;
     outline: 0;
-    &--prev{
-      &:after{
+    &--prev {
+      &:after {
         content: "‹";
         font-size: 18px;
         display: block;
       }
     }
 
-    &--next{
-      &:after{
+    &--next {
+      &:after {
         content: "›";
         font-size: 18px;
         display: block;
       }
     }
 
-    &:hover{
+    &:hover {
       background: @mainColor;
       color: #fff;
-      box-shadow: 0 6.5px 9.4px 0.6px rgba(0,0,0,.24);
+      box-shadow: 0 6.5px 9.4px 0.6px rgba(0, 0, 0, .24);
     }
   }
   &__list {
-    text-align:  justify;
+    text-align: justify;
     &:after {
-      content:  '';
-      display:  inline-block;
-      width:  100%;
+      content: '';
+      display: inline-block;
+      width: 100%;
     }
   }
 }
+
+.sort{
+  color: #666;
+  text-align: right;
+  width: 100%;
+  margin: 10px 0 20px 0;
+  &__order{
+    display: inline-block;
+    vertical-align: middle;
+    background: #f3f3f3;
+    text-align: left;
+  }
+  &__view{
+    display: inline-block;
+    vertical-align: middle;
+
+    &-item{
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 1.2em;
+      height: 42px;
+      width: 42px;
+      color: #ddd;
+      line-height: 45px;
+      text-align: center;
+      background-color: #f3f3f3;
+      &.active{
+        color: #999;
+      }
+    }
+
+  }
+  // перезапись селекта
+  .chosen-container.chosen-container-single .chosen-single{
+    outline: 0;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    font-size: 1em;
+    color: #666;
+    border-radius: 0;
+    border: 1px solid #eee;
+    -webkit-appearance: none;
+    box-shadow: none;
+    background: 0 0;
+  }
+  .chosen-container-active .chosen-single{
+    border-color: @mainColor!important;
+  }
+  .chosen-container-single .chosen-drop {
+    border-radius: 0;
+    border-color: @mainColor;
+  }
+  .chosen-container .chosen-results li.highlighted {
+    background: @mainColor;
+    color: #fff;
+  }
+  .chosen-container .chosen-results {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
