@@ -4,7 +4,7 @@
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1em;
-  font-family: "Open Sans",sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   line-height: 1.3;
   text-rendering: optimizeLegibility;
@@ -12,7 +12,8 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
 }
-h2{
+
+h2 {
   margin-bottom: .8em;
 }
 
@@ -63,10 +64,10 @@ body {
   display: inline-block;
   background: #f4f4f4;
   padding: 0 0 2px;
-  &--footer{
+  &--footer {
     padding: 5px;
     background: transparent;
-    .contact__list{
+    .contact__list {
       padding: 0;
     }
     .contact__item {
@@ -277,7 +278,7 @@ body {
       width: 100%;
     }
     &--to-all {
-      padding: 0 5px;
+      padding: 2px 5px;
       text-align: center;
       text-transform: uppercase;
       border-top: 1px solid #ddd;
@@ -338,7 +339,7 @@ body {
 
 .logo {
   float: left;
-  &--footer{
+  &--footer {
     margin-bottom: 5px;
     float: none;
   }
@@ -523,8 +524,8 @@ body {
     height: 0;
   }
 
-  &--highlighted{
-    .item__name{
+  &--highlighted {
+    .item__name {
       color: #fff;
       background-color: fade(@mainColor, 80%);
     }
@@ -764,22 +765,22 @@ body {
   }
 }
 
-.sort{
+.sort {
   color: #666;
   text-align: right;
   width: 100%;
   margin: 10px 0 20px 0;
-  &__order{
+  &__order {
     display: inline-block;
     vertical-align: middle;
     background: #f3f3f3;
     text-align: left;
   }
-  &__view{
+  &__view {
     display: inline-block;
     vertical-align: middle;
 
-    &-item{
+    &-item {
       cursor: pointer;
       display: inline-block;
       vertical-align: middle;
@@ -790,14 +791,14 @@ body {
       line-height: 45px;
       text-align: center;
       background-color: #f3f3f3;
-      &.active{
+      &.active {
         color: #999;
       }
     }
 
   }
   // перезапись селекта
-  .chosen-container.chosen-container-single .chosen-single{
+  .chosen-container.chosen-container-single .chosen-single {
     outline: 0;
     height: 40px;
     line-height: 40px;
@@ -810,8 +811,8 @@ body {
     box-shadow: none;
     background: 0 0;
   }
-  .chosen-container-active .chosen-single{
-    border-color: @mainColor!important;
+  .chosen-container-active .chosen-single {
+    border-color: @mainColor !important;
   }
   .chosen-container-single .chosen-drop {
     border-radius: 0;
@@ -827,77 +828,94 @@ body {
   }
 }
 
-
-.footer{
-  &__top{
-    background: rgba(0,0,0,.04);
+.footer {
+  &__top {
+    background: rgba(0, 0, 0, .04);
     padding: 30px 0;
   }
-  &__bottom{
+  &__bottom {
     padding: 30px 0 40px;
   }
 }
 
-
-
-
-
-.breadcrumbs{
+.breadcrumbs {
   &__item {
     line-height: 40px;
   }
-  &__link{
+  &__link {
     font-size: 14.4px;
     font-weight: 600;
   }
 }
 
-
-.social{
+.social {
   text-align: right;
-  &__item{
+  &__item {
     display: inline-block;
     height: 40px;
     width: 40px;
-    background: rgba(0,0,0,.05);
+    background: rgba(0, 0, 0, .05);
     transition: background .3s;
-    &:hover{
+    &:hover {
       background: @mainColor;
-      .social__link{
+      .social__link {
         color: #fff;
       }
     }
   }
-  &__link{
+  &__link {
     display: block;
-    font-size: 1em;
+    font-size: 11px;
     text-align: center;
     line-height: 40px;
     color: #999;
   }
 }
 
-.address{
+.address {
   margin-top: 5px;
   font-size: 12px;
 }
 
-.about-us{
+.about-us {
   text-align: justify;
   font-size: 12px;
 }
 
-.subscribe{
-  &__wrapper{
+.subscribe {
+  &:after {
+    content: '';
+    display: table;
+    width: 100%;
+    clear: both;
+    height: 0;
+  }
+  &__wrapper {
     padding: 20px;
     background: #e6e6e6;
+    &:after {
+      content: '';
+      display: table;
+      width: 100%;
+      clear: both;
+      height: 0;
+    }
+    @media (min-width: 480px)and(max-width: 991px) {
+      width: 50%;
+      float: left;
+    }
   }
-  &__text{
+  &__text {
     display: block;
     text-align: justify;
     font-size: 12px;
+    @media (min-width: 480px)and(max-width: 991px) {
+      width: 50%;
+      float: left;
+      padding-right: 15px;
+    }
   }
-  &__input{
+  &__input {
     height: auto;
     width: 100%;
     padding: 8px 16px;
@@ -907,10 +925,10 @@ body {
     background: #fff;
     border: 1px solid #ccc;
     border-radius: 2px;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
     text-shadow: none;
   }
-  &__submit{
+  &__submit {
     display: inline-block;
     padding: 8px 16px;
     font-weight: 400;
@@ -932,10 +950,98 @@ body {
 
     color: #fff;
     background-color: @mainColor;
-    border-color: darker(@mainColor, 10%);
+    border-color: darken(@mainColor, 10%);
+
+    &:hover {
+      background: darken(@mainColor, 10%);
+    }
   }
 }
 
+.clients {
+  font-size: 0;
+  position: relative;
+  margin-bottom: 20px;
+  &__headline {
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #666;
+  }
+  &__item {
+    display: inline-block;
+    width: 33.33333%;
+    padding: 0 40px;
+  }
+  &__photo {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+  }
+  &__name {
+    font-size: 16px;
+    color: @mainColor;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+  &__text {
+    font-size: 12px;
+    line-height: 17px;
+    text-align: justify;
+  }
+  &__arrow {
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 20px;
+    color: #888;
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    bottom: 0;
+    margin: auto;
+    &--left{
+      left: 0;
+    }
+    &--right{
+      right: 0;
+    }
+  }
+}
+
+.slick-dots {
+  text-align: center;
+  margin-top: 15px;
+  li {
+    display: inline-block;
+    &.slick-active {
+      button {
+        background: @mainColor;
+      }
+    }
+  }
+  button {
+    font-size: 0;
+    text-indent: -9999px;
+    background: #ddd;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 5px;
+    display: block;
+    border-radius: 50%;
+    height: 12px;
+    margin: 3px;
+  }
+}
 
 
 

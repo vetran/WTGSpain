@@ -9,6 +9,17 @@ $('.slick').slick({
     cssEase: 'linear'
 });
 
+$('.clients__list').slick({
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots: true,
+    pauseOnDotsHover: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: $('.clients__arrow--right'),
+    prevArrow: $('.clients__arrow--left'),
+});
+
 $('.item__favorites').on('click', function(){
     var icon = $(this).find('.fa');
 
