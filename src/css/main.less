@@ -1381,6 +1381,9 @@ body {
       text-rendering: optimizeLegibility;
       text-shadow: none;
       text-transform: uppercase;
+      &:hover{
+        text-decoration: underline;
+      }
     }
   }
   &__list{
@@ -1441,6 +1444,59 @@ body {
       display: block;
       overflow: hidden;
       position: relative;
+    }
+  }
+
+
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+.video-blog{
+  background: fade(#000, 2%);
+  padding-bottom: 25px;
+  &__headline{
+    text-transform: uppercase;
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #212121;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Helvetica Neue","Segoe UI",Oxygen,Ubuntu,Cantarell,"Open Sans",sans-serif;
+  }
+  &__last{
+    position: relative;
+    padding-top: 56.25%;
+    margin-bottom: 5%;
+    iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+  }
+
+  &__list{
+    &-item{
+      position: relative;
+      padding-top: 56.25%;
+      margin-bottom: 5%;
+      iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
     }
   }
 
