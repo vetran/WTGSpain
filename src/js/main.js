@@ -61,7 +61,7 @@ $(document).ready(function () {
             {
                 breakpoint: 500,
                 settings: {
-                    slidesToShow: 2
+                    slidesToShow: 1
                 }
             }
         ]
@@ -86,7 +86,6 @@ $(document).ready(function () {
         }
     });
 
-// $('[data-phone]').mask("+38(099)999-99-99");
 
     $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
         disableOn: 700,

@@ -112,6 +112,12 @@ body {
     color: #fff;
     background: darken(@mainColor, 10%);
   }
+  &:focus,
+  &:active{
+    color: #fff;
+    background: @mainColor;
+    text-decoration: none;
+  }
   &__icon {
     line-height: 20px;
     font-size: 18px;
