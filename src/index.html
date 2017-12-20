@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="libs/chosen/chosen.min.css">
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="libs/slick/slick.css">
+    <link rel="stylesheet" href="libs/nouislider/nouislider.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -89,7 +90,7 @@
                                             <img class="favorites__image" src="lorem_image/Villa.jpg" alt="">
                                             <span class="favorites__name">НОВЫЙ БУНГАЛО В ТОРРЕВЬЕХЕ</span>
                                             <span class="favorites__price">350,000 €</span>
-                                            <span class="favorites__close"><i class="fa fa-times" aria-hidden="true"></i></span>
+                                            <span class="favorites__close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
                                         </a>
                                     </li>
                                     <li class="favorites__item">
@@ -97,7 +98,7 @@
                                             <img class="favorites__image" src="lorem_image/Villa.jpg" alt="">
                                             <span class="favorites__name">БУНГАЛО В АЛИКАНТЕ</span>
                                             <span class="favorites__price">650,000 €</span>
-                                            <span class="favorites__close"><i class="fa fa-times" aria-hidden="true"></i></span>
+                                            <span class="favorites__close"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
                                         </a>
                                     </li>
                                     <li class="favorites__item">
@@ -204,7 +205,152 @@
                         <img src="lorem_image/bg6.jpg" alt="bg">
                     </div>
                 </div>
-                <div class="search">
+                <div class="hidden search">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <ul class="search__choices">
+                                    <li class="search__choices-item">
+                                        <span class="search__choices-icon">
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </span>
+                                        <span class="search__choices-text">2 Ванные</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <form action="" class="search__form">
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="search__input-wrapper">
+                                        <span class="search__input-icon"></span>
+                                        <select multiple name="location" class="search__input search__input--select">
+                                            <option value="" disabled>Местоположение</option>
+                                            <option value="any">Все побережье</option>
+                                            <option value="kosta-blanka-sever">Коста Бланка Север</option>
+                                            <optgroup label="Коста Бланка Север">
+                                                <option value="albir">Albir</option>
+                                                <option value="alicante">Alicante</option>
+                                                <option value="alicante-san-juan">Alicante (San Juan)</option>
+                                                <option value="altea">Altea</option>
+                                                <option value="benidorm">Benidorm</option>
+                                                <option value="benissa">Benissa</option>
+                                                <option value="benitachell">Benitachell</option>
+                                                <option value="busot">Busot</option>
+                                                <option value="calpe">Calpe</option>
+                                                <option value="denia">Denia</option>
+                                                <option value="el-campello">Campello</option>
+                                                <option value="javea">Javea</option>
+                                                <option value="la-nucia">La Nucia</option>
+                                                <option value="moraira">Moraira</option>
+                                                <option value="oliva">Oliva</option>
+                                                <option value="villajoyosa">Villajoyosa</option>
+                                            </optgroup>
+                                            <option value="kosta-blanka-yug">Коста Бланка Юг</option>
+                                            <optgroup label="Коста Бланка Юг">
+                                                <option value="algorfa">Algorfa</option>
+                                                <option value="arenales-del-sol">Arenales del Sol</option>
+                                                <option value="aspe">Aspe</option>
+                                                <option value="cabo-roig">Cabo Roig</option>
+                                                <option value="campoamor">Campoamor</option>
+                                                <option value="ciudad-quesada">Ciudad Quesada</option>
+                                                <option value="guardamar-de-segura">Guardamar de Segura</option>
+                                                <option value="la-marina">La Marina</option>
+                                                <option value="la-mata">La Mata</option>
+                                                <option value="la-zenia">La Zenia</option>
+                                                <option value="las-colinas">Las Colinas</option>
+                                                <option value="mil-palmeras">Mil Palmeras</option>
+                                                <option value="orihuela-costa">Orihuela Costa</option>
+                                                <option value="punta-prima">Punta Prima</option>
+                                                <option value="santa-pola">Santa Pola</option>
+                                                <option value="torre-de-la-horadada">Torre de la Horadada</option>
+                                                <option value="torrevieja-ru">Torrevieja</option>
+                                                <option value="villamartin">Villamartin</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="search__input-wrapper">
+                                        <span class="search__input-icon"></span>
+                                        <select multiple name="type" class="search__input search__input--select">
+                                            <option value="" disabled>Тип</option>
+                                            <option value="any">Любой тип</option>
+                                            <option value="apartamenty">Апартаменты</option>
+                                            <option value="bungalo-v-ispanii">Бунгало</option>
+                                            <option value="villy">Виллы</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="search__input-wrapper">
+                                        <span class="search__input-icon"></span>
+                                        <select multiple name="market" class="search__input search__input--select">
+                                            <option value="" disabled="">Рынок</option>
+                                            <option value="any">Любой рынок</option>
+                                            <option value="1">Первичный</option>
+                                            <option value="2">Вторичный</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-5">
+                                    <div class="search__input-wrapper">
+                                        <span class="search__input-icon"></span>
+                                        <!-- price slider -->
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="search__input-wrapper">
+                                        <span class="search__input-icon"></span>
+                                        <select multiple name="bedrooms" class="search__input search__input--select">
+                                            <option value="" disabled="">Спальни</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="search__input-wrapper">
+                                        <span class="search__input-icon"></span>
+                                        <select multiple name="bathrooms" class="search__input search__input--select">
+                                            <option value="" disabled >Ванные</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="search__input-wrapper">
+                                        <span class="search__input-icon"></span>
+                                        <select multiple name="offers" class="search__input search__input--select">
+                                            <option value="" disabled="">Предложения от</option>
+                                            <option value="any">Любые предложения</option>
+                                            <option value="bank">Банк</option>
+                                            <option value="zastrojshhik">Застройщик</option>
+                                            <option value="sobstvennik">Собственник</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="search__input-wrapper">
+                                        <div class="search__input-icon">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <button type="submit" class="search__submit">
+                                        <span class="search__submit-icon"></span>
+                                        <span class="search__submit-text"></span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -825,6 +971,78 @@
     </div>
 
 
+    <!-- новостной блок -->
+
+
+
+    <div class="news">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="news__headline">Последние Новости</div>
+                </div>
+                <div class="col-sm-8 col-xs-12">
+                    <div class="news__last">
+                        <a class="news__last-link" href="#">
+                            <span class="news__last-title">
+                                <span class="news__last-category">
+                                    <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                    <span>Новости Испании</span>
+                                </span>
+                                <span class="news__last-text">Рынок недвижимости</span>
+                                <span class="news__last-date">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    <span>12/12/17</span>
+                                </span>
+                            </span>
+                            <img class="news__last-image" src="lorem_image/news3.jpg" alt="dsdsd">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <a class="news__top" href="#">
+                        <span class="news__top-title">
+                            <span class="news__top-category">
+                                <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                                <span>Новости Испании</span>
+                            </span>
+                            <span class="news__top-text">Испания — лидер по темпам роста ВВП</span>
+                            <span class="news__top-date">
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                <span>12/12/17</span>
+                            </span>
+                        </span>
+                        <img class="news__top-image" src="lorem_image/news.jpg" alt="dsdsd">
+                    </a>
+                    <ul class="news__list">
+                        <li class="news__list-item">
+                            <a class="news__list-link" href="#">
+                                <img  class="news__list-image" src="lorem_image/news2.jpg" alt="dsdsd">
+                                <span class="news__list-title">Рынок недвижимости</span>
+                                <span class="news__list-date">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    <span>12/12/17</span>
+                                </span>
+                                <span class="news__list-subtitle">Цены на недвижимость растут</span>
+                            </a>
+                        </li>
+                        <li class="news__list-item">
+                            <a class="news__list-link" href="#">
+                                <img  class="news__list-image" src="lorem_image/news2.jpg" alt="dsdsd">
+                                <span class="news__list-title">Рынок недвижимости</span>
+                                <span class="news__list-date">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    <span>12/12/17</span>
+                                </span>
+                                <span class="news__list-subtitle">Цены на недвижимость растут</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Наша команда -->
     <div class="container">
@@ -1062,6 +1280,11 @@
     </div>
 </footer>
 
+<div class="to-top">
+    <svg width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 206604 129154" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"><path d="M32922 126238l70380-70380 70380 70380c3888 3888 10252 3888 14140 0l15866-15866c3888-3888 3888-10252 0-14140l-93316-93316c-3888-3888-10252-3888-14140 0l-93316 93316c-3888 3888-3888 10252 0 14140l15866 15866c3888 3888 10252 3888 14140 0z"></path></svg>
+</div>
+
+<script src="libs/nouislider/nouislider.min.js"></script>
 <script src="libs/jquery/jquery-3.2.1.min.js"></script>
 <script src="libs/slick/slick.min.js"></script>
 <script src="libs/chosen/chosen.jquery.min.js"></script>

@@ -65,6 +65,14 @@ $('.staff__list').slick({
     ]
 });
 
+$('select').chosen({
+    disable_search_threshold: 10,
+    hide_results_on_select: true,
+    search_contains: true,
+    width: "100%"
+});
+
+
 $('.item__favorites').on('click', function () {
     var icon = $(this).find('.fa');
 
@@ -79,13 +87,26 @@ $('.item__favorites').on('click', function () {
 // $('[data-phone]').mask("+38(099)999-99-99");
 
 
-$('select').chosen({disable_search_threshold: 10});
+$('.leave-request').on('click', function (e) {
+    e.preventDefault();
 
-// $('.search__button').on('click', function () {
-//     var search = $('.footer .search__input');
-//
-//     $('body,html').animate({
-//         scrollTop: search.offset().top - 65
-//     }, 500);
-//
-// });
+    var request = $('.request');
+
+    $('body,html').animate({
+        scrollTop: request.offset().top - 10
+    }, 500);
+
+});
+
+$(window).scroll(function () {
+    if ($(this).scrollTop() >= 1000) {
+        $('.to-top').fadeIn();
+    } else {
+        $('.to-top').fadeOut();
+    }
+});
+$('.to-top').click(function () {
+    $('body,html').animate({
+        scrollTop: 0
+    }, 800);
+});

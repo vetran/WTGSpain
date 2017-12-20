@@ -24,7 +24,8 @@ ul {
 }
 
 a {
-  color: @mainColor;
+  color: #000;
+  //color: @mainColor;
   &:hover {
     text-decoration: none;
   }
@@ -89,6 +90,7 @@ body {
   }
   &__icon {
     margin-right: 5px;
+    color: @mainColor;
     &--mobile {
       font-size: 1.4em;
     }
@@ -307,20 +309,34 @@ body {
   }
 
   &__close {
+    //cursor: pointer;
+    //position: absolute;
+    //top: 0;
+    //padding-left: 1px;
+    //right: 5px;
+    //bottom: 0;
+    //font-size: 11px;
+    //margin: auto;
+    //width: 17px;
+    //border-radius: 50%;
+    //height: 17px;
+    //line-height: 16px;
+    //background: #e40000;
+    //color: #fff;
+    //text-align: center;
     cursor: pointer;
     position: absolute;
     top: 0;
     padding-left: 1px;
     right: 5px;
     bottom: 0;
-    font-size: 11px;
+    font-size: 18px;
     margin: auto;
-    width: 17px;
+    width: 18px;
     border-radius: 50%;
     height: 17px;
     line-height: 16px;
-    background: #e40000;
-    color: #fff;
+    color: #f00;
     text-align: center;
     &:hover {
       color: darken(#e40000, 10%);
@@ -1128,6 +1144,30 @@ body {
   }
 }
 
+.to-top{
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  padding: 5px;
+  position: fixed;
+  z-index: 40;
+  bottom: 55px;
+  right: 20px;
+  cursor: pointer;
+  background: fade(@mainColor, 80%);
+  display: none;
+  //opacity: .75;
+  border-radius: 3px;
+  fill: #fff;
+  svg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+}
 
 .request{
   font-size: 16px;
@@ -1241,6 +1281,199 @@ body {
 }
 
 
+
+
+.news{
+  background: fade(#000, 2%);
+  padding-bottom: 25px;
+  &__headline{
+    text-transform: uppercase;
+    margin: 10px 0;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #212121;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Helvetica Neue","Segoe UI",Oxygen,Ubuntu,Cantarell,"Open Sans",sans-serif;
+  }
+  &__last{
+    position: relative;
+    &-title {
+      position: absolute;
+      bottom: -1px;
+      width: 100%;
+      padding: 5px 10px 10px;
+      background: rgba(255,255,255,.8);
+    }
+    &-category {
+      color: @mainColor;
+      font-weight: bold;
+      display: block;
+      font-size: 0.8em;
+      text-transform: uppercase;
+    }
+    &-date{
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      i{
+        font-size: .8em;
+        color: @mainColor;
+        vertical-align: middle;
+      }
+      span{
+        color: #666;
+        vertical-align: middle;
+      }
+    }
+    &-text {
+      color: #212121;
+      -webkit-font-smoothing: antialiased;
+      font-family: "Helvetica Neue","Segoe UI",Oxygen,Ubuntu,Cantarell,"Open Sans",sans-serif;
+      font-weight: 400;
+      text-rendering: optimizeLegibility;
+      text-shadow: none;
+      text-transform: uppercase;
+      font-size: 1.4em;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  &__top{
+    display: block;
+    position: relative;
+    &-title {
+      position: absolute;
+      top: 0;
+      padding: 5px 10px 5px;
+      width: 100%;
+      background: rgba(255,255,255,.8);
+    }
+    &-category {
+      color: @mainColor;
+      font-weight: bold;
+      display: block;
+      font-size: 0.7em;
+      text-transform: uppercase;
+    }
+    &-date{
+      i{
+        font-size: .8em;
+        color: @mainColor;
+        vertical-align: middle;
+      }
+      span{
+        color: #666;
+        font-size: .8em;
+        vertical-align: middle;
+      }
+    }
+    &-text {
+      margin: 2px 0 0;
+      font-size: 1.2em;
+      color: #212121;
+      -webkit-font-smoothing: antialiased;
+      font-family: "Helvetica Neue","Segoe UI",Oxygen,Ubuntu,Cantarell,"Open Sans",sans-serif;
+      font-weight: 400;
+      float: left;
+      text-align: left;
+      line-height: 1.3;
+      text-rendering: optimizeLegibility;
+      text-shadow: none;
+      text-transform: uppercase;
+    }
+  }
+  &__list{
+    &-item{
+      padding-top: 14px;
+    }
+    &-link{
+      display: block;
+      &:after{
+        content: '';
+        display: table;
+        clear: both;
+        width: 100%;
+      }
+    }
+    &-subtitle {
+      font-size: .85em;
+      text-transform: uppercase;
+      display: block;
+      color: #666;
+      line-height: 1.2em;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    &-image {
+      width: 30%;
+      height: auto;
+      float: left;
+      padding-right: 7px;
+    }
+    &-date{
+      i{
+        font-size: .8em;
+        color: @mainColor;
+        vertical-align: middle;
+      }
+      span{
+        color: #666;
+        font-size: .8em;
+        vertical-align: middle;
+      }
+    }
+    &-title {
+      font-size: 1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      -webkit-font-smoothing: antialiased;
+      font-family: "Helvetica Neue","Segoe UI",Oxygen,Ubuntu,Cantarell,"Open Sans",sans-serif;
+      color: @mainColor;
+      float: left;
+      width: 70%;
+      line-height: 1em;
+      padding: 0;
+      top: -2px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      display: block;
+      overflow: hidden;
+      position: relative;
+    }
+  }
+
+
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.chosen-container-single .chosen-single div b {
+  background: none;
+}
+.chosen-container-single .chosen-single div b:after{
+  content: "\F107";
+  font-family: 'FontAwesome';
+  color: #666;
+}
 
 
 
