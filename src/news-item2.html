@@ -211,281 +211,150 @@
                         <img src="lorem_image/bg6.jpg" alt="bg">
                     </div>
                 </div>
-                <div class="search">
+                <div class="search hidden">
                     <div class="container">
                         <div class="row">
-                            <div class="search__choices">
-                                <div class="col-xs-12">
-                                    <ul class="search__choices-list">
-                                        <li class="search__choices-item">
-                                            <span class="search__choices-icon">
-                                                <i class="fa fa-times" aria-hidden="true"></i>
-                                            </span>
-                                            <span class="search__choices-text">2 Ванные</span>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div class="col-xs-12">
+                                <ul class="search__choices">
+                                    <li class="search__choices-item">
+                                        <span class="search__choices-icon">
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </span>
+                                        <span class="search__choices-text">2 Ванные</span>
+                                    </li>
+                                </ul>
                             </div>
-
                             <form action="" class="search__form">
-                                <div class="col-xs-6 col-sm-2">
-                                    <div class="search__item">
-                                        <div class="search__type">
-                                            <span class="search__type-icon"><svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000"><path d="M698.7 554.7h114c17.1 0 36.6 12.3 44 27.8l-219.7 38.8c20.8-23.3 41.7-45 61.7-66.6zm-388.7 0h-119.3l192.7 111.3 22.7-4c-31.4-39.7-65-73.6-96.1-107.3zm231 202.3l245.5 141.7h182.5c17.2 0 25.5-12.7 18.4-28.4l-110.7-243.7-285.6 50.4c-18 24.1-35 50.4-50.1 80zm-44.4 46.6l164.8 95.1h-630.4c-17.3 0-25.6-12.7-18.4-28.4l45.1-99.2 293.1-51.7 138.7 80.1c2.1 1.8 4.5 3.2 7.1 4.1zm-415.4-84.3l56-123.2 150.3 86.8-206.3 36.4zM514.8 698.7c-5.5 13.5-24.5 13.4-30-.1-61.1-149.6-184.2-190.6-207.7-323.9-23.2-131.2 67.8-259.8 200.7-272.3 135.1-12.8 248.8 93 248.8 225.3 0 172.7-144 205-211.8 371zm104.8-371.1c0-66-53.6-119.5-119.7-119.5s-119.7 53.5-119.7 119.5 53.6 119.5 119.7 119.5c66.1.1 119.7-53.4 119.7-119.5z"/></svg></span>
-                                            <span class="search__type-text">Местоположение</span>
-                                        </div>
-                                        <div class="search__dropdown">
-                                            <label class="search__label">
-                                                <input type="checkbox" class="search__input">
-                                                <span class="search__icon"></span>
-                                                <span class="search__text">Все побережье</span>
-                                            </label>
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="search__input-wrapper">
+                                        <span class="search__input-icon"></span>
+                                        <select multiple name="location" class="search__input search__input--select">
+                                            <option value="" disabled>Местоположение</option>
+                                            <option value="any">Все побережье</option>
+                                            <option value="kosta-blanka-sever">Коста Бланка Север</option>
+                                            <optgroup label="Коста Бланка Север">
+                                                <option value="albir">Albir</option>
+                                                <option value="alicante">Alicante</option>
+                                                <option value="alicante-san-juan">Alicante (San Juan)</option>
+                                                <option value="altea">Altea</option>
+                                                <option value="benidorm">Benidorm</option>
+                                                <option value="benissa">Benissa</option>
+                                                <option value="benitachell">Benitachell</option>
+                                                <option value="busot">Busot</option>
+                                                <option value="calpe">Calpe</option>
+                                                <option value="denia">Denia</option>
+                                                <option value="el-campello">Campello</option>
+                                                <option value="javea">Javea</option>
+                                                <option value="la-nucia">La Nucia</option>
+                                                <option value="moraira">Moraira</option>
+                                                <option value="oliva">Oliva</option>
+                                                <option value="villajoyosa">Villajoyosa</option>
+                                            </optgroup>
+                                            <option value="kosta-blanka-yug">Коста Бланка Юг</option>
+                                            <optgroup label="Коста Бланка Юг">
+                                                <option value="algorfa">Algorfa</option>
+                                                <option value="arenales-del-sol">Arenales del Sol</option>
+                                                <option value="aspe">Aspe</option>
+                                                <option value="cabo-roig">Cabo Roig</option>
+                                                <option value="campoamor">Campoamor</option>
+                                                <option value="ciudad-quesada">Ciudad Quesada</option>
+                                                <option value="guardamar-de-segura">Guardamar de Segura</option>
+                                                <option value="la-marina">La Marina</option>
+                                                <option value="la-mata">La Mata</option>
+                                                <option value="la-zenia">La Zenia</option>
+                                                <option value="las-colinas">Las Colinas</option>
+                                                <option value="mil-palmeras">Mil Palmeras</option>
+                                                <option value="orihuela-costa">Orihuela Costa</option>
+                                                <option value="punta-prima">Punta Prima</option>
+                                                <option value="santa-pola">Santa Pola</option>
+                                                <option value="torre-de-la-horadada">Torre de la Horadada</option>
+                                                <option value="torrevieja-ru">Torrevieja</option>
+                                                <option value="villamartin">Villamartin</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="search__input-wrapper">
+                                        <span class="search__input-icon"></span>
+                                        <select multiple name="type" class="search__input search__input--select">
+                                            <option value="" disabled>Тип</option>
+                                            <option value="any">Любой тип</option>
+                                            <option value="apartamenty">Апартаменты</option>
+                                            <option value="bungalo-v-ispanii">Бунгало</option>
+                                            <option value="villy">Виллы</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="search__input-wrapper">
+                                        <span class="search__input-icon"></span>
+                                        <select multiple name="market" class="search__input search__input--select">
+                                            <option value="" disabled="">Рынок</option>
+                                            <option value="any">Любой рынок</option>
+                                            <option value="1">Первичный</option>
+                                            <option value="2">Вторичный</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-5">
+                                    <div class="search__input-wrapper">
+                                        <span class="search__input-icon"></span>
+                                        <!-- price slider -->
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="search__input-wrapper">
+                                        <span class="search__input-icon"></span>
+                                        <select multiple name="bedrooms" class="search__input search__input--select">
+                                            <option value="" disabled="">Спальни</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="search__input-wrapper">
+                                        <span class="search__input-icon"></span>
+                                        <select multiple name="bathrooms" class="search__input search__input--select">
+                                            <option value="" disabled >Ванные</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="search__input-wrapper">
+                                        <span class="search__input-icon"></span>
+                                        <select multiple name="offers" class="search__input search__input--select">
+                                            <option value="" disabled="">Предложения от</option>
+                                            <option value="any">Любые предложения</option>
+                                            <option value="bank">Банк</option>
+                                            <option value="zastrojshhik">Застройщик</option>
+                                            <option value="sobstvennik">Собственник</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3">
+                                    <div class="search__input-wrapper">
+                                        <div class="search__input-icon">
 
-                                            <div class="search__group">
-                                                <label class="search__label">
-                                                    <input type="checkbox" class="search__input">
-                                                    <span class="search__icon"></span>
-                                                    <span class="search__text">Коста Бланка Север</span>
-                                                </label>
-                                                <label class="search__label">
-                                                    <input type="checkbox" class="search__input">
-                                                    <span class="search__icon"></span>
-                                                    <span class="search__text">Albir</span>
-                                                </label>
-                                                <label class="search__label">
-                                                    <input type="checkbox" class="search__input">
-                                                    <span class="search__icon"></span>
-                                                    <span class="search__text">Ajasass</span>
-                                                </label>
-                                                <label class="search__label">
-                                                    <input type="checkbox" class="search__input">
-                                                    <span class="search__icon"></span>
-                                                    <span class="search__text">Albir</span>
-                                                </label>
-                                                <label class="search__label">
-                                                    <input type="checkbox" class="search__input">
-                                                    <span class="search__icon"></span>
-                                                    <span class="search__text">Ajasass</span>
-                                                </label>
-                                            </div>
-                                            <label class="search__label">
-                                                <input type="checkbox" class="search__input">
-                                                <span class="search__icon"></span>
-                                                <span class="search__text">Коста Бланка Север</span>
-                                            </label>
-                                            <label class="search__label">
-                                                <input type="checkbox" class="search__input">
-                                                <span class="search__icon"></span>
-                                                <span class="search__text">Albir</span>
-                                            </label>
-                                            <label class="search__label">
-                                                <input type="checkbox" class="search__input">
-                                                <span class="search__icon"></span>
-                                                <span class="search__text">Ajasass</span>
-                                            </label>
-                                            <label class="search__label">
-                                                <input type="checkbox" class="search__input">
-                                                <span class="search__icon"></span>
-                                                <span class="search__text">Albir</span>
-                                            </label>
-                                            <label class="search__label">
-                                                <input type="checkbox" class="search__input">
-                                                <span class="search__icon"></span>
-                                                <span class="search__text">Ajasass</span>
-                                            </label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-6 col-sm-2">
-                                    <div class="search__item">
-                                        <div class="search__type">
-                                            <span class="search__type-icon"><svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000"><path d="M698.7 554.7h114c17.1 0 36.6 12.3 44 27.8l-219.7 38.8c20.8-23.3 41.7-45 61.7-66.6zm-388.7 0h-119.3l192.7 111.3 22.7-4c-31.4-39.7-65-73.6-96.1-107.3zm231 202.3l245.5 141.7h182.5c17.2 0 25.5-12.7 18.4-28.4l-110.7-243.7-285.6 50.4c-18 24.1-35 50.4-50.1 80zm-44.4 46.6l164.8 95.1h-630.4c-17.3 0-25.6-12.7-18.4-28.4l45.1-99.2 293.1-51.7 138.7 80.1c2.1 1.8 4.5 3.2 7.1 4.1zm-415.4-84.3l56-123.2 150.3 86.8-206.3 36.4zM514.8 698.7c-5.5 13.5-24.5 13.4-30-.1-61.1-149.6-184.2-190.6-207.7-323.9-23.2-131.2 67.8-259.8 200.7-272.3 135.1-12.8 248.8 93 248.8 225.3 0 172.7-144 205-211.8 371zm104.8-371.1c0-66-53.6-119.5-119.7-119.5s-119.7 53.5-119.7 119.5 53.6 119.5 119.7 119.5c66.1.1 119.7-53.4 119.7-119.5z"/></svg></span>
-                                            <span class="search__type-text">Ванные</span>
-                                        </div>
-                                        <div class="search__dropdown">
-                                            <label class="search__label">
-                                                <input type="checkbox" class="search__input" name="bathrooms" value="1">
-                                                <span class="search__icon"></span>
-                                                <span class="search__text">1</span>
-                                            </label>
-                                            <label class="search__label">
-                                                <input type="checkbox" class="search__input" name="bathrooms" value="2">
-                                                <span class="search__icon"></span>
-                                                <span class="search__text">2</span>
-                                            </label>
-                                            <label class="search__label">
-                                                <input type="checkbox" class="search__input" disabled name="bathrooms" value="3">
-                                                <span class="search__icon"></span>
-                                                <span class="search__text">3</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-6 col-sm-2">
-
-                                </div>
-                                <div class="col-xs-6 col-sm-6">
-
-                                </div>
-                                <div class="col-xs-6 col-sm-2">
-
-                                </div>
-                                <div class="col-xs-6 col-sm-2">
-
-                                </div>
-                                <div class="col-xs-6 col-sm-2">
-
-                                </div>
                                 <div class="col-xs-6 col-sm-3">
-
-                                </div>
-                                <div class="col-xs-6 col-sm-3">
-
+                                    <button type="submit" class="search__submit">
+                                        <span class="search__submit-icon"></span>
+                                        <span class="search__submit-text"></span>
+                                    </button>
                                 </div>
                             </form>
-
-
-
-
-                            <!--<form action="" class="search__form">-->
-                                <!--<div class="col-xs-6 col-sm-2">-->
-                                    <!--<div class="search__input-wrapper">-->
-                                        <!--<span class="search__input-icon"></span>-->
-                                        <!--<select multiple name="location" class="search__input search__input&#45;&#45;select">-->
-                                            <!--<option value="" disabled>Местоположение</option>-->
-                                            <!--<option value="any">Все побережье</option>-->
-                                            <!--<option value="kosta-blanka-sever">Коста Бланка Север</option>-->
-                                            <!--<optgroup label="Коста Бланка Север">-->
-                                                <!--<option value="albir">Albir</option>-->
-                                                <!--<option value="alicante">Alicante</option>-->
-                                                <!--<option value="alicante-san-juan">Alicante (San Juan)</option>-->
-                                                <!--<option value="altea">Altea</option>-->
-                                                <!--<option value="benidorm">Benidorm</option>-->
-                                                <!--<option value="benissa">Benissa</option>-->
-                                                <!--<option value="benitachell">Benitachell</option>-->
-                                                <!--<option value="busot">Busot</option>-->
-                                                <!--<option value="calpe">Calpe</option>-->
-                                                <!--<option value="denia">Denia</option>-->
-                                                <!--<option value="el-campello">Campello</option>-->
-                                                <!--<option value="javea">Javea</option>-->
-                                                <!--<option value="la-nucia">La Nucia</option>-->
-                                                <!--<option value="moraira">Moraira</option>-->
-                                                <!--<option value="oliva">Oliva</option>-->
-                                                <!--<option value="villajoyosa">Villajoyosa</option>-->
-                                            <!--</optgroup>-->
-                                            <!--<option value="kosta-blanka-yug">Коста Бланка Юг</option>-->
-                                            <!--<optgroup label="Коста Бланка Юг">-->
-                                                <!--<option value="algorfa">Algorfa</option>-->
-                                                <!--<option value="arenales-del-sol">Arenales del Sol</option>-->
-                                                <!--<option value="aspe">Aspe</option>-->
-                                                <!--<option value="cabo-roig">Cabo Roig</option>-->
-                                                <!--<option value="campoamor">Campoamor</option>-->
-                                                <!--<option value="ciudad-quesada">Ciudad Quesada</option>-->
-                                                <!--<option value="guardamar-de-segura">Guardamar de Segura</option>-->
-                                                <!--<option value="la-marina">La Marina</option>-->
-                                                <!--<option value="la-mata">La Mata</option>-->
-                                                <!--<option value="la-zenia">La Zenia</option>-->
-                                                <!--<option value="las-colinas">Las Colinas</option>-->
-                                                <!--<option value="mil-palmeras">Mil Palmeras</option>-->
-                                                <!--<option value="orihuela-costa">Orihuela Costa</option>-->
-                                                <!--<option value="punta-prima">Punta Prima</option>-->
-                                                <!--<option value="santa-pola">Santa Pola</option>-->
-                                                <!--<option value="torre-de-la-horadada">Torre de la Horadada</option>-->
-                                                <!--<option value="torrevieja-ru">Torrevieja</option>-->
-                                                <!--<option value="villamartin">Villamartin</option>-->
-                                            <!--</optgroup>-->
-                                        <!--</select>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="col-xs-6 col-sm-2">-->
-                                    <!--<div class="search__input-wrapper">-->
-                                        <!--<span class="search__input-icon"></span>-->
-                                        <!--<select multiple name="type" class="search__input search__input&#45;&#45;select">-->
-                                            <!--<option value="" disabled>Тип</option>-->
-                                            <!--<option value="any">Любой тип</option>-->
-                                            <!--<option value="apartamenty">Апартаменты</option>-->
-                                            <!--<option value="bungalo-v-ispanii">Бунгало</option>-->
-                                            <!--<option value="villy">Виллы</option>-->
-                                        <!--</select>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="col-xs-6 col-sm-2">-->
-                                    <!--<div class="search__input-wrapper">-->
-                                        <!--<span class="search__input-icon"></span>-->
-                                        <!--<select multiple name="market" class="search__input search__input&#45;&#45;select">-->
-                                            <!--<option value="" disabled="">Рынок</option>-->
-                                            <!--<option value="any">Любой рынок</option>-->
-                                            <!--<option value="1">Первичный</option>-->
-                                            <!--<option value="2">Вторичный</option>-->
-                                        <!--</select>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="col-xs-6 col-sm-6">-->
-                                    <!--<div class="search__input-wrapper">-->
-                                        <!--<span class="search__input-icon"></span>-->
-                                        <!--<div>-->
-                                            <!--<input type="number" name="price_range_min" id="property-search-price-range-min" value="0" class="hide" data-role="none">-->
-                                            <!--<input type="number" name="price_range_max" id="property-search-price-range-max" value="6000000" class="hide" data-role="none">-->
-                                            <!--<label> <span id="price-range-min">0 €</span> до <span id="price-range-max">6,000,000 €</span></label>-->
-                                            <!--<div id="price-range" class="noUi-target noUi-ltr noUi-horizontal"><div class="noUi-base"><div class="noUi-origin" style="left: 0%;"><div class="noUi-handle" data-handle="0" style="z-index: 5;"></div></div><div class="noUi-connect" style="left: 0%; right: 0%;"></div><div class="noUi-origin" style="left: 100%;"><div class="noUi-handle" data-handle="1" style="z-index: 4;"></div></div></div></div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="col-xs-6 col-sm-2">-->
-                                    <!--<div class="search__input-wrapper">-->
-                                        <!--<span class="search__input-icon"></span>-->
-                                        <!--<select multiple name="bedrooms" class="search__input search__input&#45;&#45;select">-->
-                                            <!--<option value="" disabled="">Спальни</option>-->
-                                            <!--<option value="1">1</option>-->
-                                            <!--<option value="2">2</option>-->
-                                            <!--<option value="3">3</option>-->
-                                            <!--<option value="4">4</option>-->
-                                            <!--<option value="5">5</option>-->
-                                        <!--</select>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="col-xs-6 col-sm-2">-->
-                                    <!--<div class="search__input-wrapper">-->
-                                        <!--<span class="search__input-icon"></span>-->
-                                        <!--<select multiple name="bathrooms" class="search__input search__input&#45;&#45;select">-->
-                                            <!--<option value="" disabled >Ванные</option>-->
-                                            <!--<option value="1">1</option>-->
-                                            <!--<option value="2">2</option>-->
-                                            <!--<option value="3">3</option>-->
-                                            <!--<option value="4">4</option>-->
-                                            <!--<option value="5">5</option>-->
-                                        <!--</select>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="col-xs-6 col-sm-2">-->
-                                    <!--<div class="search__input-wrapper">-->
-                                        <!--<span class="search__input-icon"></span>-->
-                                        <!--<select multiple name="offers" class="search__input search__input&#45;&#45;select">-->
-                                            <!--<option value="" disabled="">Предложения от</option>-->
-                                            <!--<option value="any">Любые предложения</option>-->
-                                            <!--<option value="bank">Банк</option>-->
-                                            <!--<option value="zastrojshhik">Застройщик</option>-->
-                                            <!--<option value="sobstvennik">Собственник</option>-->
-                                        <!--</select>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="col-xs-6 col-sm-3">-->
-                                    <!--<div class="search__input-wrapper">-->
-                                        <!--<div class="search__input-icon">-->
-
-                                        <!--</div>-->
-                                        <!--<input class="search__input-field" type="number">-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="col-xs-6 col-sm-3">-->
-                                    <!--<div class="search__input-wrapper">-->
-                                        <!--<button type="submit" class="search__submit">-->
-                                            <!--<span class="search__submit-icon"></span>-->
-                                            <!--<span class="search__submit-text">Поиск</span>-->
-                                        <!--</button>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                            <!--</form>-->
                         </div>
                     </div>
 
@@ -495,23 +364,137 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-12 hidden-sm hidden-xs">
-                <div class="main-text">
-                    <h1>Недвижимость в Испании</h1>
-                    <h2>WTG Spain - Выбираем Лучшее</h2>
-                    <p>WTG Spain – передовое агентство недвижимости в Испании! Компания была основана в городе Аликанте
-                        и предоставляет полный комплекс консалтинговых услуг при инвестировании в жилую недвижимость в
-                        Испании. Основные принципы, которыми руководствуется WTG Spain при работе с клиентом:
-                        открытость и прозрачность деятельности; безопасность и надежность сделки; высокая
-                        профессиональная квалификация сотрудников; предоставление полного комплекса услуг на всех этапах
-                        сделки; высокое качество сервиса. Главная задача агентства: представление и защита интересов
-                        наших клиентов и так как основатели компании в душе перфекционисты, вся команда WTG Spain
-                        сделает все возможное, чтобы Вы остались довольны результатом нашего с Вами
-                        сотрудничества!</p>
+            <div class="news-item">
+                <div class="col-xs-12">
+                    <h1 class="news-item__headline">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
+                    <p class="news-item__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias distinctio explicabo in numquam quaerat quos saepe sunt! Eius esse expedita laudantium obcaecati optio perspiciatis praesentium quaerat similique voluptatem. Accusantium ea, libero magnam numquam officia voluptate voluptatem? A assumenda culpa, eius eligendi fugit illum in laboriosam magnam molestias necessitatibus quos reprehenderit similique unde ut, vel, voluptate voluptatem voluptates. Aliquam beatae consectetur deserunt dolore ducimus est fugit iure minima numquam odio, perspiciatis quo sunt, suscipit tempore voluptatem. Amet at dolor earum explicabo unde! Alias delectus, expedita fuga, inventore laudantium maxime placeat quasi quibusdam quo recusandae rem sit veniam voluptas. A corporis, suscipit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores aut magni minima! At cum ducimus et explicabo illo maxime natus nostrum possimus qui quia, quo ratione repellat vero. Fugit.</p>
+                </div>
+                <div class="news-item__wrapper">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-md-8"></div>
+                            <div class="col-md-4">
+                                <div class="news-categories">
+                                    <div class="news-categories__headline">Категории</div>
+                                    <form class="news-categories__form" action="">
+                                        <label class="news-categories__label">
+                                            <span class="news-categories__icon"></span>
+                                            <input class="news-categories__input" type="search" placeholder="ПОИСК">
+                                        </label>
+                                    </form>
+                                    <ul class="news-categories__list">
+                                        <li class="news-categories__item">
+                                            <a class="news-categories__link" href="#">
+                                                <span class="news-categories__icon"></span>
+                                                <span class="news-categories__text">ВСЕ НОВОСТИ</span>
+                                            </a>
+                                            <ul class="news-categories__sub-list">
+                                                <li class="news-categories__sub-item">
+                                                    <a class="news-categories__sub-link" href="#">
+                                                        <span class="news-categories__sub-icon"></span>
+                                                        <span class="news-categories__sub-text">Lorem ipsum.</span>
+                                                    </a>
+                                                </li>
+                                                <li class="news-categories__sub-item">
+                                                    <a class="news-categories__sub-link" href="#">
+                                                        <span class="news-categories__sub-icon"></span>
+                                                        <span class="news-categories__sub-text">Lorem ipsum.</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="news-categories__item">
+                                            <a class="news-categories__link" href="#">
+                                                <span class="news-categories__icon"></span>
+                                                <span class="news-categories__text">ГОРОДА ИСПАНИИ</span>
+                                            </a>
+                                        </li>
+                                        <li class="news-categories__item">
+                                            <a class="news-categories__link" href="#">
+                                                <span class="news-categories__icon"></span>
+                                                <span class="news-categories__text">ИСПАНСКАЯ КУХНЯ</span>
+                                            </a>
+                                        </li>
+                                        <li class="news-categories__item">
+                                            <a class="news-categories__link" href="#">
+                                                <span class="news-categories__icon"></span>
+                                                <span class="news-categories__text">МЕДИЦИНА</span>
+                                            </a>
+                                        </li>
+                                        <li class="news-categories__item">
+                                            <a class="news-categories__link" href="#">
+                                                <span class="news-categories__icon"></span>
+                                                <span class="news-categories__text">НОВОСТИ ИСПАНИИ</span>
+                                            </a>
+                                        </li>
+                                        <li class="news-categories__item">
+                                            <a class="news-categories__link" href="#">
+                                                <span class="news-categories__icon"></span>
+                                                <span class="news-categories__text">ОБРАЗОВАНИЕ</span>
+                                            </a>
+                                        </li>
+                                        <li class="news-categories__item">
+                                            <a class="news-categories__link" href="#">
+                                                <span class="news-categories__icon"></span>
+                                                <span class="news-categories__text">ОТДЫХ В ИСПАНИИ</span>
+                                            </a>
+                                        </li>
+                                        <li class="news-categories__item">
+                                            <a class="news-categories__link" href="#">
+                                                <span class="news-categories__icon"></span>
+                                                <span class="news-categories__text">ПЛЯЖИ</span>
+                                            </a>
+                                        </li>
+                                        <li class="news-categories__item">
+                                            <a class="news-categories__link" href="#">
+                                                <span class="news-categories__icon"></span>
+                                                <span class="news-categories__text">РЫНОК НЕДВИЖИМОСТИ</span>
+                                            </a>
+                                        </li>
+                                        <li class="news-categories__item">
+                                            <a class="news-categories__link" href="#">
+                                                <span class="news-categories__icon"></span>
+                                                <span class="news-categories__text">ЭКОНОМИКА</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="manager-online manager-online--news-item">
+                                    <div class="manager-online__photo" style="background-image: url(lorem_image/photo.jpg);"></div>
+                                    <div class="manager-online__name">Александра</div>
+                                    <span class="manager-online__text">Менеджер по продажам <span style="color: forestgreen;font-weight: bold;">Online</span></span>
+
+                                    <div class="contact contact--manager">
+                                        <ul class="contact__list">
+                                            <li class="contact__item">
+                                                <a href="tel:+380667774288" class="contact__link">
+                                                    <span class="contact__icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                                    <span class="contact__text">+3 (066) 7774288</span>
+                                                </a>
+                                            </li>
+                                            <li class="contact__item">
+                                                <a href="tel:+380977774288" class="contact__link">
+                                                    <span class="contact__icon contact__icon--mobile"><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                                                    <span class="contact__text">+3 (097) 7774288</span>
+                                                </a>
+                                            </li>
+                                            <li class="contact__item">
+                                                <a href="mailto:wtg.office@gmail.com" class="contact__link">
+                                                    <span class="contact__icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                                    <span class="contact__text">wtg.office@gmail.com</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <div class="container">
         <div class="row">
@@ -1042,6 +1025,8 @@
             </div>
         </div>
     </div>
+
+
 
     <div class="vlog">
         <div class="container">

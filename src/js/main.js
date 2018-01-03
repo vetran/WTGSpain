@@ -71,8 +71,55 @@ $(document).ready(function () {
         disable_search_threshold: 10,
         hide_results_on_select: true,
         search_contains: true,
+        display_disabled_options: false,
         width: "100%"
     });
+
+
+    (function(){
+        var search = $('.search'),
+            form = search.find('.search__form'),
+            searchItems = search.find('.search__item');
+        
+        searchItems.find('.search__type').on('click', function(){
+            var item = $(this).parent();
+
+            if(item.hasClass('active')){
+                item.removeClass('active');
+            }
+            else{
+                searchItems.removeClass('active');
+                item.addClass('active');
+            }
+
+        });
+
+        function makeChoices() {
+            var list = $('.search__choices-list');
+
+            var elem = '';
+
+            $('.search__input:checked').each(function(){
+
+                elem += '<li class="search__choices-item">';
+                elem += '    <span class="search__choices-icon"><i class="fa fa-times" aria-hidden="true"></i></span>';
+                elem += '    <span class="search__choices-text">'+ $(this).parent().text() + '</span>';
+                elem += '</li>';
+
+            });
+            list.html(elem);
+        }
+
+        form.on('change', function(event){
+            var target = $(event.target);
+
+            target.prop('disabled', true);
+            makeChoices();
+        })
+
+    })();
+
+
 
 
     $('.item__favorites').on('click', function () {
@@ -85,7 +132,6 @@ $(document).ready(function () {
             icon.removeClass('fa-heart').addClass('fa-heart-o');
         }
     });
-
 
     $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
         disableOn: 700,
