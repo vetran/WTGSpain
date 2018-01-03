@@ -76,50 +76,61 @@ $(document).ready(function () {
     });
 
 
-    (function(){
+    (function () {
         var search = $('.search'),
             form = search.find('.search__form'),
             searchItems = search.find('.search__item');
-        
-        searchItems.find('.search__type').on('click', function(){
+
+        searchItems.find('.search__type').on('click', function () {
             var item = $(this).parent();
 
-            if(item.hasClass('active')){
+            if (item.hasClass('active')) {
                 item.removeClass('active');
             }
-            else{
+            else {
                 searchItems.removeClass('active');
                 item.addClass('active');
             }
 
         });
 
-        function makeChoices() {
-            var list = $('.search__choices-list');
+        function makeChoices(item) {
+            var list = $('.search__choices-list'), elem = '';
 
-            var elem = '';
+            var itemCategory = item.data('category'),
+                itemIndex = item.data('index'),
+                itemText = item.parent().find('.search__text').text(),
+                text = (item.data('text')) ? itemText + ' ' + item.data('text') : itemText;
 
-            $('.search__input:checked').each(function(){
+            elem += '<li class="search__choices-item">';
+            elem += '    <span class="search__choices-icon search__choices-remove" data-category="' + itemCategory + '" data-index="' + itemIndex + '"><i class="fa fa-times" aria-hidden="true"></i></span>';
+            elem += '    <span class="search__choices-text">' + text +'</span>';
+            elem += '</li>';
 
-                elem += '<li class="search__choices-item">';
-                elem += '    <span class="search__choices-icon"><i class="fa fa-times" aria-hidden="true"></i></span>';
-                elem += '    <span class="search__choices-text">'+ $(this).parent().text() + '</span>';
-                elem += '</li>';
-
-            });
-            list.html(elem);
+            list.append(elem);
         }
 
-        form.on('change', function(event){
+        form.on('change', function (event) {
             var target = $(event.target);
 
-            target.prop('disabled', true);
-            makeChoices();
-        })
+            if(target.is('[type="checkbox"]')){
+                target.prop('disabled', true);
+                makeChoices(target);
+            }
+        });
+
+        $(document).on('click','.search__choices-remove', function(){
+            var $this =  $(this),
+                category = $this.data('category'),
+                index = $this.data('index');
+
+            $this.parent().remove();
+
+            $('input[data-category="'+ category +'"][data-index="'+ index +'"]').prop('disabled', false).prop('checked', false);
+
+        });
 
     })();
-
-
 
 
     $('.item__favorites').on('click', function () {
@@ -139,18 +150,37 @@ $(document).ready(function () {
         mainClass: 'mfp-fade',
         removalDelay: 160,
         preloader: false,
-
         fixedContentPos: false
     });
 
-    $('.leave-request').on('click', function (e) {
-        e.preventDefault();
+    var range = document.getElementById('range');
 
-        var request = $('.request');
 
-        $('body,html').animate({
-            scrollTop: request.offset().top - 10
-        }, 500);
+    var min = $('#min-price'),
+        max = $('#max-price');
+
+    noUiSlider.create(range, {
+        start: [0, 6000000],
+        connect: true,
+        range: {
+            'min': [0],
+            '0.1%': [0,  10000 ],
+            "50%": [500000, 100000],
+            'max': [6000000]
+        },
+        format: wNumb({
+            decimals: 0,
+            thousand: ',',
+            postfix: ' €'
+        })
+
+    });
+    range.noUiSlider.on('update', function(values, handle){
+        min.text(values[0]);
+        max.text(values[1]);
+
+        $('[name="min_price"]').val(values[0]);
+        $('[name="max_price"]').val(values[1]);
 
     });
 
@@ -161,6 +191,7 @@ $(document).ready(function () {
             $('.to-top').fadeOut();
         }
     });
+
     $('.to-top').click(function () {
         $('body,html').animate({
             scrollTop: 0
