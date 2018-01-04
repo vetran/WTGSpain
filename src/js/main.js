@@ -91,7 +91,6 @@ $(document).ready(function () {
                 searchItems.removeClass('active');
                 item.addClass('active');
             }
-
         });
 
         function makeChoices(item) {
@@ -113,11 +112,13 @@ $(document).ready(function () {
         form.on('change', function (event) {
             var target = $(event.target);
 
-            if(target.is('[type="checkbox"]')){
-                target.prop('disabled', true);
-                makeChoices(target);
+            if(target.is('[type="checkbox"]') && target.is(':checked')){
+               target.addClass('checked');
+               makeChoices(target);
             }
         });
+
+        $(document).on('click','.search__input.checked', function(){ return false });
 
         $(document).on('click','.search__choices-remove', function(){
             var $this =  $(this),
@@ -126,7 +127,7 @@ $(document).ready(function () {
 
             $this.parent().remove();
 
-            $('input[data-category="'+ category +'"][data-index="'+ index +'"]').prop('disabled', false).prop('checked', false);
+            $('input[data-category="'+ category +'"][data-index="'+ index +'"]').removeClass('checked').prop('checked', false);
 
         });
 
