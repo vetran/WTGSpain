@@ -2,6 +2,20 @@
 
 @mainColor: #618bc5;
 
+.clearfix {
+  *zoom: 1;
+
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1em;
   font-family: "Open Sans", sans-serif;
@@ -1998,13 +2012,19 @@ body {
 }
 
 .search {
-  height: 92px;
   position: absolute;
-  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
+  margin-bottom: 10px;
+  &__wrapper{
+    .clearfix;
+    padding: 10px;
+    padding-bottom: 6px;
+    background: rgba(70, 70, 70, 0.5);
+
+  }
   &__form {
     & > div {
       padding: 0 2px;
