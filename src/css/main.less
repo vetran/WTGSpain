@@ -907,6 +907,23 @@ body {
 
 .social {
   text-align: right;
+  &--news-item{
+    text-align: center;
+    .social__item {
+      width: 60px;
+      background: none;
+      &:hover{
+        background: none;
+        .social__link {
+          color: @mainColor;
+        }
+      }
+    }
+    .social__link {
+      color: #000;
+      font-size: 17px;
+    }
+  }
   &__item {
     display: inline-block;
     height: 40px;
@@ -1974,14 +1991,63 @@ body {
 }
 
 .news-item {
+  &__headline{
+    text-align: center;
+    margin-top: 2em;
+    font-size: 1.7em;
+  }
   &__wrapper {
+    margin-top: 15px;
     float: left;
     padding-bottom: 30px;
     width: 100%;
 
     background: #fff;
   }
+  &__social{
+    padding-top: 20px;
+    &-headline{
+      text-align: center;
+      &-text {
+        display: block;
+        padding: 20px 10px 15px;
+        text-transform: uppercase;
+        color: @mainColor;
+        border-bottom: 1px solid @mainColor;
+        width: 100%;
+        max-width: 390px;
+        margin: 0 auto 10px;
+        /* margin-bottom: 11px; */
+      }
+    }
+  }
 }
+
+.similar-news {
+  &__item {
+    .clearfix;
+    margin-bottom: 15px;
+    background: #fff;
+    height: 95px;
+  }
+  &__image {
+    width: 30%;
+    float: left;
+    height: 100%;
+    overflow: hidden;
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+  &__text {
+     width:  70%;
+    height: 100%;
+     float:  left;
+     padding: 6px 10px;
+   }
+}
+
 
 .news-categories {
   background: #fff;
