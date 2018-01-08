@@ -1822,6 +1822,76 @@ body {
   }
 }
 
+
+.youtube-video{
+  text-align: center;
+  position: relative;
+  &:hover:after {
+    opacity: .5;
+  }
+  &:after {
+    content: '';
+    display: block;
+    width: 16%;
+    height: 20%;
+    background-size: cover;
+    background-image: url(../img/youtube_play_button.png);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  &__link {
+    padding-top: 56.25%;
+    z-index: 1;
+    display: block;
+  }
+  &__title {
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 10px 3px;
+    background: rgba(255, 255, 255, 0.8);
+  }
+  &__category {
+    color: @mainColor;
+    font-weight: 600;
+    font-size: .8em;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 5px 20px 3px;
+    border-bottom: 2px solid @mainColor;
+  }
+  &__text {
+    display: block;
+    color: #212121;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Helvetica Neue", "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    text-shadow: none;
+    text-transform: uppercase;
+    font-size: 1.4em;
+  }
+  &__image {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+}
+
+
+
 .news-list {
   &--vlog {
     .news-categories__link {
@@ -1837,7 +1907,10 @@ body {
       line-height: 16px;
       color: @mainColor;
     }
-    .news-list__main-link {
+
+    .news-list__item-link {
+      padding-top: 56.25%;
+      z-index: 1;
       &:hover:after {
         opacity: .5;
       }
@@ -1856,24 +1929,15 @@ body {
         margin: auto;
       }
     }
-    .news-list__item-link {
-      &:hover:after {
-        opacity: .5;
-      }
-      &:after {
-        content: '';
-        display: block;
-        width: 20%;
-        height: 25%;
-        background-size: cover;
-        background-image: url(../img/youtube_play_button.png);
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-      }
+    img {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      right: 0;
+      height: 100%;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
     }
   }
   &__headline {
@@ -1887,6 +1951,8 @@ body {
     &-title {
       position: absolute;
       bottom: -1px;
+      right: 0;
+      left: 0;
       width: 100%;
       padding: 5px 10px 3px;
       background: rgba(255, 255, 255, .8);
@@ -1951,6 +2017,8 @@ body {
     &-category {
       position: absolute;
       bottom: -1px;
+      right: 0;
+      left: 0;
       width: 100%;
       padding: 10px 10px 7px;
       background: rgba(255, 255, 255, .8);
@@ -1995,6 +2063,11 @@ body {
 }
 
 .news-item {
+  &--youtube{
+    .news-item__wrapper{
+      display: block;
+    }
+  }
   &__headline {
     text-align: center;
     margin-top: 2em;
