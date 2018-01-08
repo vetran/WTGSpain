@@ -133,6 +133,10 @@ $(document).ready(function () {
 
     })();
 
+    $('.news-item__trigger').on('click', function(){
+        $(this).remove();
+        $('.news-item__wrapper').slideDown('slow');
+    });
 
     $('.item__favorites').on('click', function () {
         var icon = $(this).find('.fa');
@@ -156,10 +160,6 @@ $(document).ready(function () {
 
     var range = document.getElementById('range');
 
-
-    var min = $('#min-price'),
-        max = $('#max-price');
-
     noUiSlider.create(range, {
         start: [0, 6000000],
         connect: true,
@@ -177,8 +177,8 @@ $(document).ready(function () {
 
     });
     range.noUiSlider.on('update', function(values, handle){
-        min.text(values[0]);
-        max.text(values[1]);
+        $('#min-price').text(values[0]);
+        $('#max-price').text(values[1]);
 
         $('[name="min_price"]').val(values[0]);
         $('[name="max_price"]').val(values[1]);

@@ -31,6 +31,10 @@ h2 {
   margin-bottom: .8em;
 }
 
+img {
+  max-width: 100%;
+}
+
 ul {
   padding: 0;
   margin: 0;
@@ -907,12 +911,12 @@ body {
 
 .social {
   text-align: right;
-  &--news-item{
+  &--news-item {
     text-align: center;
     .social__item {
       width: 60px;
       background: none;
-      &:hover{
+      &:hover {
         background: none;
         .social__link {
           color: @mainColor;
@@ -1819,21 +1823,21 @@ body {
 }
 
 .news-list {
-  &--vlog{
-    .news-categories__link{
-      &:hover{
+  &--vlog {
+    .news-categories__link {
+      &:hover {
         .news-categories__icon {
           color: #fff;
         }
       }
     }
-    .news-categories__icon{
+    .news-categories__icon {
       background: none;
       text-align: center;
       line-height: 16px;
       color: @mainColor;
     }
-    .news-list__main-link{
+    .news-list__main-link {
       &:hover:after {
         opacity: .5;
       }
@@ -1852,7 +1856,7 @@ body {
         margin: auto;
       }
     }
-    .news-list__item-link{
+    .news-list__item-link {
       &:hover:after {
         opacity: .5;
       }
@@ -1991,22 +1995,56 @@ body {
 }
 
 .news-item {
-  &__headline{
+  &__headline {
     text-align: center;
     margin-top: 2em;
     font-size: 1.7em;
   }
-  &__wrapper {
-    margin-top: 15px;
-    float: left;
-    padding-bottom: 30px;
-    width: 100%;
-
+  &__detail {
+    .clearfix;
+    padding: 0 15px 15px;
     background: #fff;
   }
-  &__social{
+  &__wrapper {
+    display: none;
+    @media (max-width: 575px) {
+      margin: 0 -15px;
+    }
+  }
+  &__trigger {
+    color: @mainColor;
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  &__main {
+    width: 70%;
+    float: left;
+    padding-right: 15px;
+    @media (max-width: 991px) {
+      width: 60%;
+    }
+    @media (max-width: 575px) {
+      padding-right: 0;
+      width: 100%;
+    }
+  }
+  &__aside {
+    width: 30%;
+    float: left;
+    padding-left: 15px;
+    @media (max-width: 991px) {
+      width: 40%;
+    }
+    @media (max-width: 575px) {
+      width: 100%;
+      padding-left: 0;
+    }
+  }
+  &__social {
     padding-top: 20px;
-    &-headline{
+    &-headline {
       text-align: center;
       &-text {
         display: block;
@@ -2024,35 +2062,49 @@ body {
 }
 
 .similar-news {
-  &__item {
-    .clearfix;
-    margin-bottom: 15px;
-    background: #fff;
-    height: 95px;
+  margin: 15px 0;
+
+  @media (max-width: 575px){
+    padding: 0 15px;
   }
-  &__image {
-    width: 30%;
-    float: left;
-    height: 100%;
-    overflow: hidden;
-    img {
-      width: auto;
-      height: 100%;
+  &__headline {
+    color: @mainColor;
+    font-size: 15px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+  }
+  &__list {
+    font-size: 0;
+    margin: 0 -10px;
+  }
+  &__item {
+    font-size: 14px;
+    display: inline-block;
+    width: 50%;
+    padding: 10px;
+    @media (max-width: 767px){
+      width: 100%;
     }
   }
+  &__image {
+    width: 150px;
+    height: 85px;
+    float: left;
+  }
   &__text {
-     width:  70%;
-    height: 100%;
-     float:  left;
-     padding: 6px 10px;
-   }
+    background: #fff;
+    height: 85px;
+    float: left;
+    padding: 10px;
+    overflow: hidden;
+    width: ~"calc(100% - 150px)";
+  }
 }
-
 
 .news-categories {
   background: #fff;
   margin-bottom: 15px;
-
   &__headline {
     text-transform: uppercase;
     padding: 13px 20px;
@@ -2137,7 +2189,7 @@ body {
   bottom: 0;
   margin: auto;
   margin-bottom: 10px;
-  &__wrapper{
+  &__wrapper {
     .clearfix;
     padding: 10px;
     padding-bottom: 6px;
@@ -2152,14 +2204,14 @@ body {
   }
   &__input {
     display: none;
-    &--text{
+    &--text {
       display: block;
     }
     &:checked {
       & + .search__icon {
-             border: 1px solid #ccc !important;
-             background: #ccc !important;
-           }
+        border: 1px solid #ccc !important;
+        background: #ccc !important;
+      }
       & ~ .search__text {
         color: #ccc !important;
       }
@@ -2169,22 +2221,22 @@ body {
     cursor: pointer;
     background: #fff;
     position: relative;
-    &--range{
+    &--range {
       padding-top: 1px;
       height: 42px;
     }
-    &--input{
-      .search__type{
+    &--input {
+      .search__type {
         padding-top: 0;
         padding-bottom: 0;
-        &:after{
+        &:after {
           display: none;
         }
       }
-      .search__type-icon{
+      .search__type-icon {
         margin: 9px 0;
       }
-      .search__input{
+      .search__input {
         display: inline-block;
         vertical-align: middle;
         border: none;
@@ -2245,7 +2297,7 @@ body {
     background: #fff;
     top: 100%;
     right: 0;
-    left: 0;    
+    left: 0;
     padding-bottom: 6px;
     width: 100%;
     max-height: 260px;
@@ -2284,7 +2336,7 @@ body {
       padding-left: 5px;
     }
   }
-  &__price{
+  &__price {
     text-align: center;
   }
   &__submit {
@@ -2296,20 +2348,20 @@ body {
     color: #fff;
     border: none;
     background: @mainColor;
-    &-icon{
+    &-icon {
       display: inline-block;
       width: 24px;
       height: 24px;
       vertical-align: middle;
     }
   }
-  &__choices{
+  &__choices {
     min-height: 33px;
-    &>div{
+    & > div {
       padding: 0 2px;
       margin-bottom: 4px;
     }
-    &-icon{
+    &-icon {
       display: inline-block;
       vertical-align: middle;
       cursor: pointer;
@@ -2321,7 +2373,7 @@ body {
       padding: 0 10px;
       margin-right: 4px;
     }
-    &-text{
+    &-text {
       font-size: 12px;
       color: #666;
     }
@@ -2363,12 +2415,9 @@ body {
   color: #666;
 }
 
-
-
-
 .property-search-form .prince-range label {
   display: block;
-  color: #474747!important;
+  color: #474747 !important;
   margin: 0;
   height: 22px;
   max-height: 25px;
@@ -2391,7 +2440,8 @@ body {
 #range.noUi-horizontal {
   height: 2px
 }
-#range.noUi-target{
+
+#range.noUi-target {
   border-radius: 0;
   float: none;
   padding-left: 10px;
@@ -2400,9 +2450,11 @@ body {
   margin: 3px 20px 0;
 
 }
+
 #range.noUi-horizontal .noUi-base {
   background-color: #a3a3a3
 }
+
 #range.noUi-horizontal * {
   outline: none;
   border: none;
@@ -2426,5 +2478,5 @@ body {
 }
 
 #range.noUi-horizontal .noUi-connect {
-  background-color: darken(@mainColor, 5%)!important
+  background-color: darken(@mainColor, 5%) !important
 }

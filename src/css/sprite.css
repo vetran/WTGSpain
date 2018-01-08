@@ -1,1 +1,28 @@
-.icon{background-image:url(../img/icons.png);background-position-x:144px}.icon--russian{background-position-y:990px}.icon--english{background-position-y:1043px}.icon--espanol{background-position-y:1017px}.icon--location{background-position-y:947px}.icon--area{background-position-y:-18px}.icon--bathroom{background-position-y:-62px}.icon--bedroom{background-position-y:-166px}.icon--sea{background-position-y:-1125px}
+.icon {
+  background-image: url(../img/icons.png);
+  background-position-x: 144px;
+}
+.icon--russian {
+  background-position-y: 990px;
+}
+.icon--english {
+  background-position-y: 1043px;
+}
+.icon--espanol {
+  background-position-y: 1017px;
+}
+.icon--location {
+  background-position-y: 947px;
+}
+.icon--area {
+  background-position-y: -18px;
+}
+.icon--bathroom {
+  background-position-y: -62px;
+}
+.icon--bedroom {
+  background-position-y: -166px;
+}
+.icon--sea {
+  background-position-y: -1125px;
+}
