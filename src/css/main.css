@@ -1830,6 +1830,7 @@ body {
 }
 .aside-content {
   padding: 0;
+  margin-bottom: 10px;
 }
 .news-list--vlog .news-categories__link:hover .news-categories__icon {
   color: #fff;
