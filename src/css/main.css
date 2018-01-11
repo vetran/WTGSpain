@@ -893,6 +893,12 @@ body {
   color: #000;
   font-size: 17px;
 }
+.social--product {
+  text-align: left;
+  padding: 25px 0;
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+}
 .social__item {
   display: inline-block;
   height: 40px;
@@ -1482,6 +1488,107 @@ body {
   padding: 15px 10px;
   background: rgba(255, 255, 255, 0.85);
 }
+.product-description {
+  color: #666;
+}
+.product-description ul {
+  padding: 20px;
+  background: #fafafa;
+}
+.product-description ul li:before {
+  content: "■";
+  color: #618bc5;
+  padding-right: 7px;
+}
+.characteristics {
+  margin-bottom: 50px;
+  color: #666;
+}
+.characteristics__headline {
+  margin-bottom: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  position: relative;
+}
+.characteristics__headline:after {
+  content: '';
+  height: 2px;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #eee;
+  display: block;
+  position: absolute;
+  margin: auto;
+}
+.characteristics__headline span {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  padding: 0 15px;
+}
+.characteristics__list {
+  font-size: 0;
+}
+.characteristics__item {
+  display: inline-block;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .characteristics__item {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .characteristics__item {
+    width: 33.3333333%;
+  }
+}
+.characteristics__link {
+  display: inline-block;
+  line-height: 3;
+  font-size: 13px;
+}
+.characteristics__icon {
+  color: #55c349;
+  display: inline-block;
+  margin-right: 10px;
+}
+.location {
+  margin-bottom: 50px;
+  color: #666;
+}
+.location__headline {
+  margin-bottom: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  position: relative;
+}
+.location__headline:after {
+  content: '';
+  height: 2px;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #eee;
+  display: block;
+  position: absolute;
+  margin: auto;
+}
+.location__headline span {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  padding: 0 15px;
+}
 .vlog {
   background: rgba(0, 0, 0, 0.02);
   padding-bottom: 25px;
@@ -1838,6 +1945,7 @@ body {
 }
 .main-content {
   background: #fff;
+  padding: 30px;
 }
 .aside-content {
   padding: 0;
@@ -2461,7 +2569,7 @@ body {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  padding: 0 10px;
+  padding: 5px 10px 2px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2481,7 +2589,7 @@ body {
   width: 5px;
   -webkit-transform: rotate(26deg);
           transform: rotate(26deg);
-  height: 55px;
+  height: auto;
   margin: -5px 5px;
 }
 .payment__price {
