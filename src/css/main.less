@@ -734,6 +734,9 @@ body {
       @media (min-width: 768px) and (max-width: 991px){
         width: 50%;
       }
+      @media (max-width: 575px){
+        width: 50%;
+      }
     }
   }
   &__list {
@@ -1555,6 +1558,9 @@ body {
 
 .product-description {
   color: #666;
+  @media (max-width: 767px){
+    font-size: 14px;
+  }
   ul {
     padding: 20px;
     background: #fafafa;
@@ -2037,6 +2043,9 @@ body {
   position: relative;
   background: #fff;
   padding: 30px;
+  @media (max-width: 767px){
+    padding: 10px;
+  }
 }
 
 .aside-content {
@@ -2681,23 +2690,37 @@ body {
   top: 50px;
   left: 0;
   z-index:  1;
+  @media (max-width: 767px){
+    position: static;
+  }
   &__headline{
     background: rgba(255, 255, 255, 0.9);
     padding:  15px;
     padding-top: 0;
     margin-bottom: 20px;
+    @media (max-width: 767px){
+      padding: 0;
+      margin-bottom: 10px;
+      line-height: 19px;
+    }
   }
   &__name{
     font-size: 15px;
     font-weight: 700;
     display:  inline-block;
     vertical-align:  middle;
+    @media (max-width: 767px){
+      display: inline;
+    }
   }
   &__location{
     color: #999;
     font-size: 13px;
     text-transform:  none;
     display:  block;
+    @media (max-width: 767px){
+      margin-top: 7px;
+    }
   }
   &__favorites{
     font-size: 10px;
@@ -2706,6 +2729,9 @@ body {
     vertical-align:  middle;
     &.active{
       color: @mainColor;
+    }
+    @media (max-width: 767px){
+      display: inline;
     }
   }
   &__offer{
@@ -2729,6 +2755,9 @@ body {
 .images {
   margin: -30px -30px 20px;
   overflow: hidden;
+  @media (max-width: 767px){
+    margin: -10px -10px 0;
+  }
   &__main{
     cursor: url(../img/image_popup_cursor.png) 25 25 , auto;
   }
