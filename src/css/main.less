@@ -722,6 +722,20 @@ body {
 }
 
 .property {
+  &--product{
+    .property__list{
+      padding: 0;
+    }
+    .property__value{
+      font-size: 13px;
+    }
+    .property__item {
+      width: 33.333333%;
+      @media (min-width: 768px) and (max-width: 991px){
+        width: 50%;
+      }
+    }
+  }
   &__list {
     padding-left: 15px;
     &:after {
@@ -741,6 +755,8 @@ body {
     height: 16px;
     display: inline-block;
     vertical-align: middle;
+    line-height: 16px;
+    color: #7f7f7f;
   }
   &__value {
     color: #878787;
