@@ -162,8 +162,9 @@ $(document).ready(function () {
 
             $this.parent().remove();
 
-            $('input[data-category="' + category + '"][data-index="' + index + '"]').removeClass('checked').prop('checked', false);
-
+            $('input[data-category="' + category + '"][data-index="' + index + '"]')
+                .removeClass('checked')
+                .prop('checked', false);
         });
 
     })();
@@ -192,7 +193,6 @@ $(document).ready(function () {
         fixedContentPos: false
     });
 
-
     var range = document.getElementById('range') || false;
 
     if (range) {
@@ -218,10 +218,21 @@ $(document).ready(function () {
 
             $('[name="min_price"]').val(values[0]);
             $('[name="max_price"]').val(values[1]);
-
         });
     }
 
+    $('.search__additional-trigger').on('click', function(){
+        if($(this).hasClass('closed')){
+            $(this).addClass('hidden');
+            $('.search__additional-list').removeClass('hidden');
+            $('.search__additional-trigger.opened').removeClass('hidden');
+        }
+        else if($(this).hasClass('opened')){
+            $(this).addClass('hidden');
+            $('.search__additional-list').addClass('hidden');
+            $('.search__additional-trigger.closed').removeClass('hidden');
+        }
+    });
     
     $(window).scroll(function () {
         var $this = $(this);
