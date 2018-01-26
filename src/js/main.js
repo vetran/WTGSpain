@@ -174,7 +174,6 @@ $(document).ready(function () {
             thousand: ',',
             postfix: ' €'
         })
-
     });
     range.noUiSlider.on('update', function(values, handle){
         $('#min-price').text(values[0]);

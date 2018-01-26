@@ -1,7 +1,17 @@
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    cleanCss = require('gulp-clean-css');
+    cleanCss = require('gulp-clean-css'),
+    
+    less = require('gulp-less'),
+    notify = require("gulp-notify"),
+    path = require("path"),
+    watch = require('gulp-watch'),
+    LessAutoprefix = require('less-plugin-autoprefix'),
+    sourcemaps = require('gulp-sourcemaps'),
+    LessPluginCleanCSS = require('less-plugin-clean-css'),
+    cleanCSSPlugin = new LessPluginCleanCSS({advanced: true}),
+    autoprefix = new LessAutoprefix({ browsers: ['> 1%'] });
 
 var libs_js = [
     "src/libs/nouislider/nouislider.min.js",
@@ -40,4 +50,29 @@ gulp.task('styles', function(){
         .pipe(gulp.dest('build/css'));
 });
 
-gulp.task('default', ['scripts', 'styles']);
+
+gulp.task('less', function(){
+    gulp.src('src/css/main.less')
+        .pipe(less({
+            plugins: [ autoprefix, cleanCSSPlugin ],
+            paths: [ path.join(__dirname, 'less', 'includes') ]
+        }).on('error', notify.onError({
+            title: "Less",
+            subtitle: "Error",
+            sound: false,
+            message: "<%= error.message %>"
+        })))
+        .pipe(notify({
+            title: "Less",
+            subtitle: "Compiled",
+            sound: false,
+            message: "<%= file.relative %>"
+        }))
+        .pipe(gulp.dest('src/css'));
+});
+
+
+gulp.task('watch', function(){
+    gulp.watch('src/css/main.less', ['less']);
+});
+gulp.task('default', ['scripts', 'styles', 'watch']);
