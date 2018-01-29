@@ -198,7 +198,6 @@
 			</div>
 		</div>
 	</header>
-
 	<div class="main">
 		<div class="container">
 			<div class="row">
@@ -256,7 +255,7 @@
 							</h1>
 							<span class="product-header__offer">
 								<span class="offer">
-									<span class="offer__price">388,500 €</span>
+									<!--<span class="offer__price">388,500 €</span>-->
 									<span class="offer__type">Аппартаменты</span>
 									<span class="offer__status">(Собственник)</span>
 								</span>
@@ -574,9 +573,10 @@
 				</div>
 				<div class="col-sm-4 col-md-3 hidden-xs">
 					<div class="aside-content">
-						<div class="product-price">47,000 €</div>
+						<div class="product-price">47,000 €</div><!--убрать на продукте аренды-->
+						<div class="product-price product-price--lease hidden">АРЕНДА</div><!-- для страницы аренды -->
 
-						<div class="payment">
+						<div class="payment"><!--убрать на продукте аренды-->
 							<div class="payment__item">
 								<div class="payment__text">Ваш взнос (40%)</div>
 								<div class="payment__price">27,000 €</div>
@@ -588,20 +588,32 @@
 							</div>
 						</div>
 
-						<div class="lease-term">
+						<div class="payment payment--lease hidden"><!-- для страницы аренды -->
+							<div class="payment__item">
+								<div class="payment__text">Цена за неделю</div>
+								<div class="payment__price">270 €</div>
+							</div>
+							<div class="payment__separator"></div>
+							<div class="payment__item">
+								<div class="payment__text">Цена за день</div>
+								<div class="payment__price">70 €</div>
+							</div>
+						</div>
+
+						<div class="lease-term"><!--убрать на продукте аренды-->
 							<span class="lease-term__text">Расчетная стоимость сдачи в аренду около:</span>
 							<span class="lease-term__value"> 120 € / день</span>
 						</div>
 
 						<a href="#" class="leave-request leave-request--product">
-							<span class="leave-request__text">Оставить заявку</span>
+							<span class="leave-request__text">Оставить заявку</span><!--убрать на продукте аренды-->
+							<span class="leave-request__text hidden">Забронировать</span>
 						</a>
 
-						<div class="search search--catalog">
+						<div class="search search--catalog"><!--убрать на продукте аренды-->
 							<div class="search__choices">
 								<ul class="search__choices-list"></ul>
 							</div>
-
 							<div class="search__wrapper">
 								<form action="" class="search__form">
 									<div class="search__item">

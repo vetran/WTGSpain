@@ -112,7 +112,19 @@ $(document).ready(function () {
     (function () {
         var search = $('.search'),
             form = search.find('.search__form'),
-            searchItems = search.find('.search__item');
+            searchItems = search.find('.search__item'),
+            searchInput = search.find('.search__input');
+
+
+        searchInput.each(function () {
+            var target = $(this);
+
+            if (target.is('[type="checkbox"]') && target.is(':checked')) {
+                target.addClass('checked');
+                makeChoices(target);
+            }
+        });
+        
 
         searchItems.find('.search__type').on('click', function () {
             var item = $(this).parent();
@@ -142,6 +154,9 @@ $(document).ready(function () {
             list.append(elem);
         }
 
+
+
+
         form.on('change', function (event) {
             var target = $(event.target);
 
@@ -160,7 +175,9 @@ $(document).ready(function () {
                 category = $this.data('category'),
                 index = $this.data('index');
 
-            $this.parent().remove();
+            $this.parent().hide(300, function () {
+                $(this).remove();
+            });
 
             $('input[data-category="' + category + '"][data-index="' + index + '"]')
                 .removeClass('checked')
