@@ -2572,6 +2572,10 @@ body {
       padding: 8px 25px 8px 9px;
       border: 1px solid #eee;
     }
+    .search__item--range {
+      height: 42px;
+      border: 1px solid #eeeeee;
+    }
     .search__item--input .search__input {
       padding: 8px 9px 9px;
     }
@@ -2583,7 +2587,6 @@ body {
     .search__choices {
       min-height: 0;
       background: #fff;
-      //margin-top: 10px;
     }
   }
   &--catalog {
@@ -2612,7 +2615,7 @@ body {
   }
   &__wrapper {
     .clearfix;
-    padding: 10px;
+    padding: 15px;
     padding-bottom: 6px;
     background: rgba(70, 70, 70, 0.5);
 
@@ -2643,7 +2646,6 @@ body {
     background: #fff;
     position: relative;
     &--range {
-      padding-top: 1px;
       height: 42px;
     }
     &--input {
@@ -2802,6 +2804,13 @@ body {
     }
   }
   &__additional {
+    margin-top: 5px;
+    &--horizontal{
+      .search__additional-item{
+        width: 25%;
+        float: left;
+      }
+    }
     &-trigger {
       cursor: pointer;
       &.closed {
@@ -3115,7 +3124,7 @@ body {
   padding-left: 10px;
   box-shadow: none;
   border: none;
-  margin: 3px 20px 0;
+  margin: 2px 20px 0;
   background-color: #ddd
 
 }
