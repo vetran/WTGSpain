@@ -1305,48 +1305,18 @@
                         image: 'http://wtgspain.com/image/2028878/400x300.jpg'
                     },
                     {
-                        lat: '57.829155',
-                        lng: '-14.789413',
-                        title: 'Сан',
+                        lat: '27.829155',
+                        lng: '-10.789413',
+                        title: 'Бунгало в Сан Педро дель Пинатар Мурсия',
                         image: 'http://wtgspain.com/image/2028878/400x300.jpg'
                     }
                 ];
 
             return {
-                center: function () {
-                    var latitude, longitude;
-
-                    var lat_max = 0,
-                        lat_min = 0,
-                        lng_max = 0,
-                        lng_min = 0;
-
-                    for (var i = 0, len = data.length; i < len; i++) {
-                        if (parseFloat(data[i].lat) > lat_max) {
-                            lat_max = parseFloat(data[i].lat);
-                        } else if (parseFloat(data[i].lat) < lat_min) {
-                            lat_min = parseFloat(data[i].lat);
-                        }
-
-                        if (parseFloat(data[i].lng) > lng_max) {
-                            lng_max = parseFloat(data[i].lng);
-                        } else if (parseFloat(data[i].lng) < lng_min) {
-                            lng_min = parseFloat(data[i].lng);
-                        }
-                    }
-
-                    latitude = (lat_max + lat_min) / data.length;
-                    longitude = (lng_max + lng_min) / data.length;
-
-                    return {
-                        lat: latitude,
-                        lng: longitude
-                    }
-                },
                 init: function () {
-                    var center, map, icons, markerCluster, transitLayer, markers = [];
+                    var map, icons, markerCluster, transitLayer, bounds, markers = [];
 
-                    center = new google.maps.LatLng(this.center());
+                    bounds = new google.maps.LatLngBounds();
 
                     icons = {
                         object: 'img/pin.png',
@@ -1354,77 +1324,70 @@
                     };
 
                     map = new google.maps.Map(doc.getElementById('map'), {
-                        zoom: 3,
-                        center: center,
-                        zoomControl: false,
+                        zoom: 10,
+                        zoomControl: true,
                         mapTypeControl: true,
                         scaleControl: true,
                         streetViewControl: false,
                         rotateControl: false,
-                        fullscreenControl: false,
-                        // styles: [{
-                        //         "featureType": "water",
-                        //         "elementType": "all",
-                        //         "stylers": [{
-                        //             "color": "#618bc5"
-                        //         }]
-                        //     },
-                        //     {
-                        //         "featureType": "administrative.province",
-                        //         "elementType": "all",
-                        //         "stylers": [{
-                        //             "visibility": "off"
-                        //         }]
-                        //     },
-                        //     {
-                        //         "featureType": "all",
-                        //         "elementType": "all",
-                        //         "stylers": [{
-                        //                 "hue": "#618bc5"
-                        //                 // "hue": "#c58200"
-                        //             },
-                        //             {
-                        //                 "saturation": -22
-                        //             }
-                        //         ]
-                        //     },
-                        //     {
-                        //         "featureType": "road.highway",
-                        //         "elementType": "all",
-                        //         "stylers": [{
-                        //             "color": "#8b9dc3"
-                        //         }]
-                        //     },
-                        //     {
-                        //         "featureType": "road.highway",
-                        //         "elementType": "labels.text.stroke",
-                        //         "stylers": [{
-                        //             "color": "#000000"
-                        //         }]
-                        //     },
-                        //     {
-                        //         "featureType": "administrative.country",
-                        //         "elementType": "geometry.stroke",
-                        //         "stylers": [{
-                        //                 "visibility": "simplified"
-                        //             },
-                        //             {
-                        //                 "color": "#618bc5"
-                        //             }
-                        //         ]
-                        //     },
-                        //     {
-                        //         "featureType": "administrative",
-                        //         "elementType": "labels.icon",
-                        //         "stylers": [{
-                        //                 "visibility": "on"
-                        //             },
-                        //             {
-                        //                 "color": "#618bc5"
-                        //             }
-                        //         ]
-                        //     }
-                        // ]
+                        fullscreenControl: false
+                       /* styles: [
+                             {
+                                 "featureType": "administrative.province",
+                                 "elementType": "all",
+                                 "stylers": [{
+                                     "visibility": "off"
+                                 }]
+                             },
+                             {
+                                 "featureType": "all",
+                                 "elementType": "all",
+                                 "stylers": [{
+                                         "hue": "#618bc5"
+                                         // "hue": "#c58200"
+                                     },
+                                     {
+                                         "saturation": -22
+                                     }
+                                 ]
+                             },
+                             {
+                                 "featureType": "road.highway",
+                                 "elementType": "all",
+                                 "stylers": [{
+                                     "color": "#8b9dc3"
+                                 }]
+                             },
+                             {
+                                 "featureType": "road.highway",
+                                 "elementType": "labels.text.stroke",
+                                 "stylers": [{
+                                     "color": "#000000"
+                                 }]
+                             },
+                             {
+                                 "featureType": "administrative.country",
+                                 "elementType": "geometry.stroke",
+                                 "stylers": [{
+                                         "visibility": "simplified"
+                                     },
+                                     {
+                                         "color": "#618bc5"
+                                     }
+                                 ]
+                             },
+                             {
+                                 "featureType": "administrative",
+                                 "elementType": "labels.icon",
+                                 "stylers": [{
+                                         "visibility": "on"
+                                     },
+                                     {
+                                         "color": "#618bc5"
+                                     }
+                                 ]
+                             }
+                         ]*/
                     });
 
                     for (var i = 0; i < data.length; i++) {
@@ -1433,14 +1396,19 @@
                         obj = data[i];
 
                         coordinates = new google.maps.LatLng(parseFloat(obj.lat), parseFloat(obj.lng));
+
                         marker = new google.maps.Marker({
                             animation: google.maps.Animation.DROP,
                             icon: icons.object,
                             position: coordinates
                         });
 
+                        bounds.extend(marker.position);
+
                         markers.push(marker);
                     }
+
+                    map.fitBounds(bounds);
 
                     transitLayer = new google.maps.TransitLayer();
                     transitLayer.setMap(map);
