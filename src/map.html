@@ -1298,7 +1298,8 @@
             "use strict";
 
             var doc = document,
-                data = [{
+                data = [
+                    {
                         lat: '37.829155',
                         lng: '-0.789413',
                         title: 'Бунгало в Сан Педро дель Пинатар Мурсия',
@@ -1314,117 +1315,120 @@
 
             return {
                 init: function () {
-                    var map, icons, markerCluster, transitLayer, bounds, markers = [];
+                    if(data.length){
+                        var map, icons, markerCluster, transitLayer, bounds, markers = [];
 
-                    bounds = new google.maps.LatLngBounds();
+                        bounds = new google.maps.LatLngBounds();
 
-                    icons = {
-                        object: 'img/pin.png',
-                        cluster: 'img/cluster.png'
-                    };
+                        icons = {
+                            object: 'img/pin.png',
+                            cluster: 'img/cluster.png'
+                        };
 
-                    map = new google.maps.Map(doc.getElementById('map'), {
-                        zoom: 10,
-                        zoomControl: true,
-                        mapTypeControl: true,
-                        scaleControl: true,
-                        streetViewControl: false,
-                        rotateControl: false,
-                        fullscreenControl: false
-                       /* styles: [
+                        map = new google.maps.Map(doc.getElementById('map'), {
+                            zoom: 10,
+                            zoomControl: true,
+                            mapTypeControl: true,
+                            scaleControl: true,
+                            streetViewControl: false,
+                            rotateControl: false,
+                            fullscreenControl: false
+                            /* styles: [
                              {
-                                 "featureType": "administrative.province",
-                                 "elementType": "all",
-                                 "stylers": [{
-                                     "visibility": "off"
-                                 }]
+                             "featureType": "administrative.province",
+                             "elementType": "all",
+                             "stylers": [{
+                             "visibility": "off"
+                             }]
                              },
                              {
-                                 "featureType": "all",
-                                 "elementType": "all",
-                                 "stylers": [{
-                                         "hue": "#618bc5"
-                                         // "hue": "#c58200"
-                                     },
-                                     {
-                                         "saturation": -22
-                                     }
-                                 ]
+                             "featureType": "all",
+                             "elementType": "all",
+                             "stylers": [{
+                             "hue": "#618bc5"
+                             // "hue": "#c58200"
                              },
                              {
-                                 "featureType": "road.highway",
-                                 "elementType": "all",
-                                 "stylers": [{
-                                     "color": "#8b9dc3"
-                                 }]
-                             },
-                             {
-                                 "featureType": "road.highway",
-                                 "elementType": "labels.text.stroke",
-                                 "stylers": [{
-                                     "color": "#000000"
-                                 }]
-                             },
-                             {
-                                 "featureType": "administrative.country",
-                                 "elementType": "geometry.stroke",
-                                 "stylers": [{
-                                         "visibility": "simplified"
-                                     },
-                                     {
-                                         "color": "#618bc5"
-                                     }
-                                 ]
-                             },
-                             {
-                                 "featureType": "administrative",
-                                 "elementType": "labels.icon",
-                                 "stylers": [{
-                                         "visibility": "on"
-                                     },
-                                     {
-                                         "color": "#618bc5"
-                                     }
-                                 ]
+                             "saturation": -22
                              }
-                         ]*/
-                    });
-
-                    for (var i = 0; i < data.length; i++) {
-                        var obj, marker, coordinates;
-
-                        obj = data[i];
-
-                        coordinates = new google.maps.LatLng(parseFloat(obj.lat), parseFloat(obj.lng));
-
-                        marker = new google.maps.Marker({
-                            animation: google.maps.Animation.DROP,
-                            icon: icons.object,
-                            position: coordinates
+                             ]
+                             },
+                             {
+                             "featureType": "road.highway",
+                             "elementType": "all",
+                             "stylers": [{
+                             "color": "#8b9dc3"
+                             }]
+                             },
+                             {
+                             "featureType": "road.highway",
+                             "elementType": "labels.text.stroke",
+                             "stylers": [{
+                             "color": "#000000"
+                             }]
+                             },
+                             {
+                             "featureType": "administrative.country",
+                             "elementType": "geometry.stroke",
+                             "stylers": [{
+                             "visibility": "simplified"
+                             },
+                             {
+                             "color": "#618bc5"
+                             }
+                             ]
+                             },
+                             {
+                             "featureType": "administrative",
+                             "elementType": "labels.icon",
+                             "stylers": [{
+                             "visibility": "on"
+                             },
+                             {
+                             "color": "#618bc5"
+                             }
+                             ]
+                             }
+                             ]*/
                         });
 
-                        bounds.extend(marker.position);
+                        for (var i = 0; i < data.length; i++) {
+                            var obj, marker, coordinates;
 
-                        markers.push(marker);
+                            obj = data[i];
+
+                            coordinates = new google.maps.LatLng(parseFloat(obj.lat), parseFloat(obj.lng));
+
+                            marker = new google.maps.Marker({
+                                animation: google.maps.Animation.DROP,
+                                icon: icons.object,
+                                position: coordinates
+                            });
+
+                            bounds.extend(marker.position);
+
+                            markers.push(marker);
+                        }
+
+                        map.fitBounds(bounds);
+
+                        transitLayer = new google.maps.TransitLayer();
+                        transitLayer.setMap(map);
+
+                        markerCluster = new MarkerClusterer(map, markers, {
+                            styles: [{
+                                url: icons.cluster,
+                                height: 50,
+                                width: 50,
+                                anchor: [0, 0],
+                                textColor: '#618bc5',
+                                textSize: 25,
+                                iconAnchor: [25, 25]
+                            }],
+                            gridSize: 10
+                        });
                     }
 
-                    map.fitBounds(bounds);
-
-                    transitLayer = new google.maps.TransitLayer();
-                    transitLayer.setMap(map);
-
-                    markerCluster = new MarkerClusterer(map, markers, {
-                        styles: [{
-                            url: icons.cluster,
-                            height: 50,
-                            width: 50,
-                            anchor: [0, 0],
-                            textColor: '#618bc5',
-                            textSize: 25,
-                            iconAnchor: [25, 25]
-                        }],
-                        gridSize: 80
-                    });
                 }
             }
         })();
