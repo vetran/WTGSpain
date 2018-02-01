@@ -1313,7 +1313,7 @@
                 ];
 
             return {
-                center: function () {
+                center: function () { // переписать через boundary object
                     var latitude, longitude;
 
                     var lat_max = 0,
@@ -1362,69 +1362,69 @@
                         streetViewControl: false,
                         rotateControl: false,
                         fullscreenControl: false,
-                        // styles: [{
-                        //         "featureType": "water",
-                        //         "elementType": "all",
-                        //         "stylers": [{
-                        //             "color": "#618bc5"
-                        //         }]
-                        //     },
-                        //     {
-                        //         "featureType": "administrative.province",
-                        //         "elementType": "all",
-                        //         "stylers": [{
-                        //             "visibility": "off"
-                        //         }]
-                        //     },
-                        //     {
-                        //         "featureType": "all",
-                        //         "elementType": "all",
-                        //         "stylers": [{
-                        //                 "hue": "#618bc5"
-                        //                 // "hue": "#c58200"
-                        //             },
-                        //             {
-                        //                 "saturation": -22
-                        //             }
-                        //         ]
-                        //     },
-                        //     {
-                        //         "featureType": "road.highway",
-                        //         "elementType": "all",
-                        //         "stylers": [{
-                        //             "color": "#8b9dc3"
-                        //         }]
-                        //     },
-                        //     {
-                        //         "featureType": "road.highway",
-                        //         "elementType": "labels.text.stroke",
-                        //         "stylers": [{
-                        //             "color": "#000000"
-                        //         }]
-                        //     },
-                        //     {
-                        //         "featureType": "administrative.country",
-                        //         "elementType": "geometry.stroke",
-                        //         "stylers": [{
-                        //                 "visibility": "simplified"
-                        //             },
-                        //             {
-                        //                 "color": "#618bc5"
-                        //             }
-                        //         ]
-                        //     },
-                        //     {
-                        //         "featureType": "administrative",
-                        //         "elementType": "labels.icon",
-                        //         "stylers": [{
-                        //                 "visibility": "on"
-                        //             },
-                        //             {
-                        //                 "color": "#618bc5"
-                        //             }
-                        //         ]
-                        //     }
-                        // ]
+                        styles: [{
+                                "featureType": "water",
+                                "elementType": "all",
+                                "stylers": [{
+                                    "color": "#618bc5"
+                                }]
+                            },
+                            {
+                                "featureType": "administrative.province",
+                                "elementType": "all",
+                                "stylers": [{
+                                    "visibility": "off"
+                                }]
+                            },
+                            {
+                                "featureType": "all",
+                                "elementType": "all",
+                                "stylers": [{
+                                        "hue": "#618bc5"
+                                        // "hue": "#c58200"
+                                    },
+                                    {
+                                        "saturation": -22
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "road.highway",
+                                "elementType": "all",
+                                "stylers": [{
+                                    "color": "#8b9dc3"
+                                }]
+                            },
+                            {
+                                "featureType": "road.highway",
+                                "elementType": "labels.text.stroke",
+                                "stylers": [{
+                                    "color": "#000000"
+                                }]
+                            },
+                            {
+                                "featureType": "administrative.country",
+                                "elementType": "geometry.stroke",
+                                "stylers": [{
+                                        "visibility": "simplified"
+                                    },
+                                    {
+                                        "color": "#618bc5"
+                                    }
+                                ]
+                            },
+                            {
+                                "featureType": "administrative",
+                                "elementType": "labels.icon",
+                                "stylers": [{
+                                        "visibility": "on"
+                                    },
+                                    {
+                                        "color": "#618bc5"
+                                    }
+                                ]
+                            }
+                        ]
                     });
 
                     for (var i = 0; i < data.length; i++) {
