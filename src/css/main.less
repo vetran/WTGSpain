@@ -97,6 +97,15 @@ body {
 
 .header {
   background: #fff;
+  @media (max-width: 767px){
+    display: none
+  }
+  &--mobile{
+
+    @media (min-width: 768px){
+      display: none
+    }
+  }
   &__top {
     padding-top: 10px;
     margin-bottom: 10px;
@@ -115,6 +124,9 @@ body {
   display: inline-block;
   background: #f4f4f4;
   padding: 0 0 2px;
+  @media(max-width: 767px){
+    
+  }
   &--footer {
     padding: 5px;
     background: transparent;
@@ -2562,6 +2574,14 @@ body {
   bottom: 0;
   margin: auto;
   margin-bottom: 10px;
+  @media (max-width: 767px){
+    display: none;
+  }
+  &--mobile{
+    @media (max-width: 767px){
+      display: block;
+    }
+  }
   &--result{
     position: static;
     .search__wrapper {
