@@ -95,16 +95,14 @@ body {
   background-color: #f8f8f8;
 }
 
+.overflowOn{
+  overflow: hidden;
+}
+
 .header {
   background: #fff;
   @media (max-width: 767px){
     display: none
-  }
-  &--mobile{
-
-    @media (min-width: 768px){
-      display: none
-    }
   }
   &__top {
     padding-top: 10px;
@@ -115,6 +113,34 @@ body {
     }
   }
 }
+
+.header-mobile {
+  background: @mainColor;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 15px;
+  box-shadow: 0 0 0 3px #cbcbcb;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  @media (min-width: 768px) {
+    display: none;
+  }
+  &__button {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 30px;
+    color: #cbcbcb;
+  }
+}
+
 
 .wrapper {
   position: relative;
@@ -440,6 +466,12 @@ body {
   }
   &__img {
     height: 60px;
+  }
+}
+
+.main{
+  @media (max-width: 767px){
+    margin-top: 60px;
   }
 }
 
@@ -2578,8 +2610,49 @@ body {
     display: none;
   }
   &--mobile{
+    margin: 0;
+    transition: left .3s;
+    top: 60px;
+    display: block;
+    position: fixed;
+    overflow-y: auto;
+    max-width: 70%;
+    left: -100%;
+    right: auto;
+    bottom: 0;
+    background: #2a2a2a;
+    &.active{
+      left: 0;
+    }
     @media (max-width: 767px){
       display: block;
+    }
+    .search__choices {
+      min-height: 0;
+    }
+    .search__item {
+      width: 100%;
+    }
+    .search__inner {
+      background: #333;
+      border: 1px solid #1f1f1f;
+      color: #fff;
+    }
+    .search__wrapper {
+      background: transparent;
+    }
+    .search__type:after {
+      color: #cbcbcb;
+    }
+    .search__item--input .search__input {
+      color: #cbcbcb;
+      background: #333333;
+    }
+    .search__dropdown {
+      background: #333;
+    }
+    .search__dropdown {
+      border: 1px solid #c3c561;
     }
   }
   &--result{
@@ -2621,6 +2694,7 @@ body {
       outline: 1px solid #efefef;
     }
     .search__item {
+      width: 100%;
       margin-bottom: 10px;
       padding: 0;
       border: 1px solid #eee
@@ -2635,8 +2709,7 @@ body {
   }
   &__wrapper {
     .clearfix;
-    padding: 15px;
-    padding-bottom: 6px;
+    padding: 7px 6px 3px;
     background: rgba(70, 70, 70, 0.5);
 
   }
@@ -2663,9 +2736,11 @@ body {
   }
   &__item {
     cursor: pointer;
-    background: #fff;
+    width: 20%;
+    float: left;
     position: relative;
     &--range {
+      width: 40%;
       height: 42px;
     }
     &--input {
@@ -2745,6 +2820,11 @@ body {
     width: 100%;
     max-height: 260px;
     overflow: auto;
+  }
+  &__inner {
+    background: #fff;
+    position: relative;
+    height: 100%;
   }
   &__type {
     position: relative;

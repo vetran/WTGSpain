@@ -1,5 +1,22 @@
 $(document).ready(function () {
 
+    $('.header-mobile__button').on('click', function () {
+        var $this = $(this),
+            body = $('body'),
+            header = $this.closest('.header-mobile'),
+            target = $('.' + $this.data('target'));
+
+        if(target.hasClass('active')){
+            target.removeClass('active');
+            body.removeClass('overflowOn');
+        }
+        else{
+            target.addClass('active');
+            body.addClass('overflowOn');
+        }
+
+    });
+
     $('.slick').slick({
         fade: true,
         autoplay: true,
@@ -41,7 +58,6 @@ $(document).ready(function () {
             enabled: true
         }
     });
-
 
     $('.clients__list').slick({
         autoplay: true,
@@ -108,13 +124,11 @@ $(document).ready(function () {
         width: "100%"
     });
 
-
     (function () {
         var search = $('.search'),
             form = search.find('.search__form'),
             searchItems = search.find('.search__item'),
             searchInput = search.find('.search__input');
-
 
         searchInput.each(function () {
             var target = $(this);
@@ -124,10 +138,9 @@ $(document).ready(function () {
                 makeChoices(target);
             }
         });
-        
 
         searchItems.find('.search__type').on('click', function () {
-            var item = $(this).parent();
+            var item = $(this).closest('.search__item');
 
             if (item.hasClass('active')) {
                 item.removeClass('active');
@@ -153,8 +166,6 @@ $(document).ready(function () {
 
             list.append(elem);
         }
-
-
 
 
         form.on('change', function (event) {
@@ -210,7 +221,7 @@ $(document).ready(function () {
         fixedContentPos: false
     });
 
-    var range = document.getElementById('range') || false;
+    var range = document.getElementById('range') ;
 
     if (range) {
         noUiSlider.create(range, {
@@ -227,7 +238,6 @@ $(document).ready(function () {
                 thousand: ',',
                 postfix: ' €'
             })
-
         });
         range.noUiSlider.on('update', function (values, handle) {
             $('#min-price').text(values[0]);
