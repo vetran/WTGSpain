@@ -56,33 +56,37 @@
                 <div class="buttons">
                     <ul class="buttons__list">
                         <li class="buttons__item">
-                            <a href="#" class="leave-request">
-                                <span class="leave-request__icon">
-                                    <i class="fa fa-pencil"></i>
-                                </span>
-                                <span class="leave-request__text">Подать заявку</span>
-                            </a>
+                            <div class="leave-request">
+                                <a href="#" class="leave-request__link">
+                                    <span class="leave-request__icon">
+                                        <i class="fa fa-pencil"></i>
+                                    </span>
+                                    <span class="leave-request__text">Подать заявку</span>
+                                </a>
+                            </div>
                         </li>
                         <li class="buttons__item">
                             <div class="language">
-                                <div class="language__current">
-                                    <span class="language__current-icon icon icon--russian"></span>
-                                    <span class="language__current-name">Русский</span>
+                                <div class="language__inner">
+                                    <div class="language__current">
+                                        <span class="language__current-icon icon icon--russian"></span>
+                                        <span class="language__current-name">Русский</span>
+                                    </div>
+                                    <ul class="language__list">
+                                        <li class="language__item">
+                                            <a href="#" class="language__link">
+                                                <span class="language__icon icon icon--english"></span>
+                                                <span class="language__name">English</span>
+                                            </a>
+                                        </li>
+                                        <li class="language__item">
+                                            <a href="#" class="language__link">
+                                                <span class="language__icon icon icon--espanol"></span>
+                                                <span class="language__name">Espanol</span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <ul class="language__list">
-                                    <li class="language__item">
-                                        <a href="#" class="language__link">
-                                            <span class="language__icon icon icon--english"></span>
-                                            <span class="language__name">English</span>
-                                        </a>
-                                    </li>
-                                    <li class="language__item">
-                                        <a href="#" class="language__link">
-                                            <span class="language__icon icon icon--espanol"></span>
-                                            <span class="language__name">Espanol</span>
-                                        </a>
-                                    </li>
-                                </ul>
                             </div>
                         </li>
                         <li class="buttons__item">
@@ -132,7 +136,6 @@
                 <div class="logo">
                     <img class="logo__img" src="img/logo.png" alt="">
                 </div>
-
                 <nav class="nav">
                     <ul class="nav__list">
                         <li class="nav__item">
@@ -208,7 +211,15 @@
             <i class="fa fa-bars" aria-hidden="true"></i>
         </div>
 
-        <div class="search search--mobile">
+        <div data-mobile-menu class="search search--mobile">
+            <div class="leave-request leave-request--mobile">
+                <a href="#" class="leave-request__link">
+                    <span class="leave-request__icon">
+                        <i class="fa fa-pencil"></i>
+                    </span>
+                    <span class="leave-request__text">Подать заявку</span>
+                </a>
+            </div>
             <div class="search__choices">
                 <ul class="search__choices-list"></ul>
             </div>
@@ -314,12 +325,12 @@
                     <div class="search__item search__item--range">
                         <div class="search__inner">
                             <div class="search__price">
-                                <span class="search__price-value" id="min-price"></span>
+                                <span class="search__price-value min-price"></span>
                                 <span class="search__price-separator">до</span>
-                                <span class="search__price-value" id="max-price"></span>
+                                <span class="search__price-value max-price"></span>
                             </div>
 
-                            <div id="range"></div>
+                            <div class="range"></div>
 
                             <input type="hidden" name="min_price" value="270000">
                             <input type="hidden" name="max_price" value="600000">
@@ -426,16 +437,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="search__item search__item--submit">
-                        <button class="search__submit">
-                                            <span class="search__submit-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250.313 250.313" enable-background="new 0 0 250.313 250.313"><path d="M244.186 214.604l-54.379-54.378c-.289-.289-.628-.491-.93-.76 10.7-16.231 16.945-35.66 16.945-56.554 0-56.837-46.075-102.912-102.911-102.912s-102.911 46.075-102.911 102.911c0 56.835 46.074 102.911 102.91 102.911 20.895 0 40.323-6.245 56.554-16.945.269.301.47.64.759.929l54.38 54.38c8.169 8.168 21.413 8.168 29.583 0 8.168-8.169 8.168-21.413 0-29.582zm-141.275-44.458c-37.134 0-67.236-30.102-67.236-67.235 0-37.134 30.103-67.236 67.236-67.236 37.132 0 67.235 30.103 67.235 67.236s-30.103 67.235-67.235 67.235z" fill-rule="evenodd" clip-rule="evenodd" /></svg>
-                                            </span>
-                            <span class="search__submit-text">Поиск</span>
-                        </button>
-                    </div>
-
-                    <div class="search__additional hidden">
+                    <div class="search__additional">
                         <div class="search__additional-trigger closed">ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ ПОИСКА</div>
                         <div class="search__additional-trigger opened hidden">Скрыть дополнительные возможности поиска</div>
                         <div class="search__additional-list hidden">
@@ -458,9 +460,120 @@
                             </label>
                         </div>
                     </div>
+                    <div class="search__item search__item--submit">
+                        <button class="search__submit">
+                            <span class="search__submit-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250.313 250.313" enable-background="new 0 0 250.313 250.313"><path d="M244.186 214.604l-54.379-54.378c-.289-.289-.628-.491-.93-.76 10.7-16.231 16.945-35.66 16.945-56.554 0-56.837-46.075-102.912-102.911-102.912s-102.911 46.075-102.911 102.911c0 56.835 46.074 102.911 102.91 102.911 20.895 0 40.323-6.245 56.554-16.945.269.301.47.64.759.929l54.38 54.38c8.169 8.168 21.413 8.168 29.583 0 8.168-8.169 8.168-21.413 0-29.582zm-141.275-44.458c-37.134 0-67.236-30.102-67.236-67.235 0-37.134 30.103-67.236 67.236-67.236 37.132 0 67.235 30.103 67.235 67.236s-30.103 67.235-67.235 67.235z" fill-rule="evenodd" clip-rule="evenodd" /></svg>
+                            </span>
+                            <span class="search__submit-text">Поиск</span>
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
+
+        <div data-mobile-menu class="menu">
+            <div class="language language--mobile">
+                <div class="language__inner">
+                    <div class="language__current">
+                        <span class="language__current-icon icon icon--russian"></span>
+                        <span class="language__current-name">Русский</span>
+                    </div>
+                    <ul class="language__list">
+                        <li class="language__item">
+                            <a href="#" class="language__link">
+                                <span class="language__icon icon icon--english"></span>
+                                <span class="language__name">English</span>
+                            </a>
+                        </li>
+                        <li class="language__item">
+                            <a href="#" class="language__link">
+                                <span class="language__icon icon icon--espanol"></span>
+                                <span class="language__name">Espanol</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Главная</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Поиск по карте</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Каталог</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Услуги</a>
+                </li>
+                <li class="menu__item menu__item--has-children">
+                    <a href="#" class="menu__link">Важная информация</a>
+                    <ul class="menu__sub-list">
+                        <li class="menu__sub-item menu__sub-item--has-children">
+                            <a href="#" class="menu__sub-link">Процедура покупки</a>
+                            <ul class="menu__sub-list">
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">Подготовка к поездке</a>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">Подготовка предложения</a>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">Осмотр объектов</a>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">подписание договора</a>
+                                </li>
+                                <li class="menu__sub-item">
+                                    <a href="#" class="menu__sub-link">Осмотр объектов</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__sub-item">
+                            <a href="#" class="menu__sub-link">Подготовка </a>
+                        </li>
+                        <li class="menu__sub-item">
+                            <a href="#" class="menu__sub-link">Осмотр объектов</a>
+                        </li>
+                        <li class="menu__sub-item">
+                            <a href="#" class="menu__sub-link">подписание </a>
+                        </li>
+                        <li class="menu__sub-item">
+                            <a href="#" class="menu__sub-link">Осмотробъек</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu__item">
+                    <a href="news_list.html" class="menu__link">Новости</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">О нас</a>
+                </li>
+            </ul>
+            <div class="leave-request leave-request--mobile">
+                <a href="#" class="leave-request__link">
+                    <span class="leave-request__icon">
+                        <i class="fa fa-pencil"></i>
+                    </span>
+                    <span class="leave-request__text">Подать заявку</span>
+                </a>
+            </div>
+
+            <div class="favorites favorites--mobile">
+                <a href="#" class="favorites__button">
+                    <span class="favorites__icon">
+                        <i class="fa fa-heart"></i>
+                    </span>
+                    <span class="favorites__text">Избранное</span>
+                    <span class="favorites__count">(1)</span>
+                </a>
+            </div>
+        </div>
+        
+        
+
     </header>
 
     <div class="main">
@@ -595,12 +708,12 @@
                                         <div class="search__item search__item--range">
                                             <div class="search__inner">
                                                 <div class="search__price">
-                                                    <span class="search__price-value" id="min-price"></span>
+                                                    <span class="search__price-value min-price"></span>
                                                     <span class="search__price-separator">до</span>
-                                                    <span class="search__price-value" id="max-price"></span>
+                                                    <span class="search__price-value max-price"></span>
                                                 </div>
 
-                                                <div id="range"></div>
+                                                <div class="range"></div>
 
                                                 <input type="hidden" name="min_price" value="270000">
                                                 <input type="hidden" name="max_price" value="600000">

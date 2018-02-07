@@ -11,10 +11,10 @@ $(document).ready(function () {
             body.removeClass('overflowOn');
         }
         else{
+            $('[data-mobile-menu]').removeClass('active');
             target.addClass('active');
             body.addClass('overflowOn');
         }
-
     });
 
     $('.slick').slick({
@@ -221,10 +221,10 @@ $(document).ready(function () {
         fixedContentPos: false
     });
 
-    var range = document.getElementById('range') ;
+    function createRangeSlider(elem){
+        var $elem = $(elem);
 
-    if (range) {
-        noUiSlider.create(range, {
+        noUiSlider.create(elem, {
             start: [0, 6000000],
             connect: true,
             range: {
@@ -239,14 +239,51 @@ $(document).ready(function () {
                 postfix: ' €'
             })
         });
-        range.noUiSlider.on('update', function (values, handle) {
-            $('#min-price').text(values[0]);
-            $('#max-price').text(values[1]);
 
-            $('[name="min_price"]').val(values[0]);
-            $('[name="max_price"]').val(values[1]);
+        elem.noUiSlider.on('update', function (values, handle) {
+            $elem.prev().find('.min-price').text(values[0]);
+            $elem.prev().find('.max-price').text(values[1]);
+
+            $elem.parent().find('[name="min_price"]').val(values[0]);
+            $elem.parent().find('[name="max_price"]').val(values[1]);
         });
     }
+
+
+    var ranges = document.getElementsByClassName('range');
+
+    for (var i = 0; i < ranges.length; i++){
+        createRangeSlider(ranges[i]);
+    }
+
+
+    // var range = document.getElementById('range');
+    //
+    // if (range) {
+    //     noUiSlider.create(range, {
+    //         start: [0, 6000000],
+    //         connect: true,
+    //         range: {
+    //             'min': [0],
+    //             '0.1%': [0, 10000],
+    //             "50%": [500000, 100000],
+    //             'max': [6000000]
+    //         },
+    //         format: wNumb({
+    //             decimals: 0,
+    //             thousand: ',',
+    //             postfix: ' €'
+    //         })
+    //     });
+    //     range.noUiSlider.on('update', function (values, handle) {
+    //
+    //         $('#min-price').text(values[0]);
+    //         $('#max-price').text(values[1]);
+    //
+    //         $('[name="min_price"]').val(values[0]);
+    //         $('[name="max_price"]').val(values[1]);
+    //     });
+    // }
 
     $('.search__additional-trigger').on('click', function(){
         if($(this).hasClass('closed')){
