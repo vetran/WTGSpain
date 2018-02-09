@@ -1,5 +1,35 @@
 $(document).ready(function () {
 
+
+    $('[data-href]').on('click', function(){
+        window.location = $(this).data('href')
+    });
+
+    $('.sort__view-item').on('click', function(){
+        var $this = $(this),
+            list = $('.item-list');
+
+        if(!$this.hasClass('active')){
+            $('.sort__view-item').removeClass('active');
+
+            if($this.hasClass('sort__view-item--grid')){
+                list.removeClass('item-list--horizontal');
+                $this.addClass('active');
+            }
+            else if ($this.hasClass('sort__view-item--list')){
+                list.addClass('item-list--horizontal');
+                $this.addClass('active');
+            }
+        }
+
+    });
+
+
+    $('.menu .menu__item--has-children .menu__link').on('click', function(event){
+        event.preventDefault();
+        
+    });
+
     $('.header-mobile__button').on('click', function () {
         var $this = $(this),
             body = $('body'),
